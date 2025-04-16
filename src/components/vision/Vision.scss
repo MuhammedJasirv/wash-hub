@@ -1,0 +1,204 @@
+@use '../../assets/styles/variables.scss' as *;
+
+// Mixin for reusable gradient border
+@mixin gradient-border {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(120deg, #006eff, #00ff91);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.vision {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 105, 220, 0.15) 0%,
+    rgba(29, 200, 35, 0.15) 100%
+  );
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  position: relative;
+  top: -60px;
+
+  .vision-head {
+    margin: auto;
+    .titile {
+      font-weight: 500;
+      font-family: $manrope-font;
+      line-height: 57px;
+      font-size: 45px;
+    }
+
+    .desictiption {
+      font-family: $font-family;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  .vision-contents {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 20px;
+    gap: 50px;
+
+    .left {
+      width: 40%;
+      position: relative;
+      z-index: 2;
+      background-color: white;
+      border-radius: 16px;
+
+      &::before {
+        @include gradient-border;
+      }
+
+      .hero {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        .leftt {
+          background-color: #D9D9D9;
+          margin-top: 100px;
+          margin-bottom: 10px;
+          border-radius: 12px;
+
+          .graph-one {
+            width: 251px;
+            height: 217px;
+          }
+        }
+
+        .right {
+          background-color: #D9D9D9;
+          margin-bottom: 70px;
+          margin-top: 40px;
+          border-radius: 12px;
+
+          .graph-one {
+            width: 251px;
+            height: 217px;
+          }
+        }
+      }
+
+      .content {
+        text-align: left;
+        padding: 20px;
+
+        h2 {
+          font-family: $manrope-font;
+          font-weight: 500;
+          font-size: 27px;
+          line-height: 57px;
+        }
+
+        p {
+          font-family: $font-family;
+          font-size: 14px;
+          line-height: 24px;
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .right {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 60px;
+      position: relative;
+      z-index: 2;
+
+      .top,
+      .down {
+        background-color: white;
+        border-radius: 16px;
+        padding: 20px;
+        position: relative;
+        z-index: 2;
+
+        &::before {
+          @include gradient-border;
+        }
+
+        .hero {
+          display: flex;
+          justify-content: space-between;
+          align-items: end;
+
+          h2 {
+            font-family: $manrope-font;
+            font-weight: 500;
+            font-size: 27px;
+          }
+
+          img {
+            width: 75px;
+            height: 75px;
+          }
+        }
+
+        p {
+          font-family: $font-family;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: start;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .vision-footer-hero{
+    margin-top: 20px;
+    .titile {
+        font-weight: 500;
+        font-family: $manrope-font;
+        line-height: 57px;
+        font-size: 45px;
+      }
+  
+      .desictiption {
+        font-family: $font-family;
+        font-size: 14px;
+        line-height: 24px;
+        margin-top: 10px;
+      }
+  }
+  .vision-footer{
+    background-color: white;
+    border-radius: 16px;
+    position: relative;
+    padding: 50px 80px;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 0px;
+    .items{
+        display: flex;
+        width: 50%;
+        gap: 15px;
+        p{
+            font-size: 18px;
+            font-family: $font-family;
+        }
+    }
+    &::before {
+        @include gradient-border;
+      }
+  }
+}

@@ -1,0 +1,117 @@
+.about-features{
+    background: linear-gradient(
+        90deg,
+        rgba(15, 105, 220, 0.15) 0%,
+        rgba(29, 200, 35, 0.15) 100%
+      );
+      padding-bottom:120px;
+      position: relative;
+      top: -60px;
+      z-index: 0;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .features-center {
+    display: flex;
+    justify-content: space-between;
+    gap: 90px;
+    margin-top: 450px;
+    padding: 0 80px 60px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(
+        90deg,
+        rgb(8, 155, 247) 0%,
+        #0f7ac7 78%,
+        #21409a 100%
+      );
+    }
+  }
+  
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .feature-icon {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(90deg, #02a6e9 0%, #21409a 100%);
+  }
+  
+  .divider {
+    width: 1157px;
+    height: 2px;
+    background: linear-gradient(90deg, #02a6e9 0%, #21409a 100%);
+    margin: 80px auto;
+  }
+  
+
+.about {
+    display: flex;
+    padding: 0 100px;
+    gap: 100px;
+    margin: 80px 0;
+  
+    .about-content {
+      flex: 1;
+  
+      h2 {
+        font-family: 'Manrope', sans-serif;
+        font-size: 45px;
+        font-weight: 500;
+        line-height: 57.6px;
+        margin-bottom: 40px;
+      }
+  
+      p {
+        font-size: 14px;
+        line-height: 24px;
+        opacity: 0.79;
+        margin-bottom: 40px;
+      }
+  
+      .about-point {
+        margin-bottom: 50px;
+  
+        h3 {
+          font-family: 'Manrope', sans-serif;
+          font-size: 27px;
+          font-weight: 500;
+          line-height: 57.6px;
+          margin-bottom: 10px;
+        }
+  
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  
+    .about-image {
+      flex: 1;
+  
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 21px;
+        border: 1px solid var(--primary-blue);
+      }
+    }
+  }
+  
