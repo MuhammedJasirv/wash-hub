@@ -1,10 +1,11 @@
 @use '../../assets/styles/variables.scss' as *;
 .how-it-work{
     background-color: #000212;
-    position: relative;
-    top: -60px;
+    // position: relative;
+    // top: -60px;
+    margin-top: -60px;
     text-align: center;
-    padding-bottom:100px ;
+    padding-bottom:110px ;
     .hero{
         padding-top: 50px;
         color: white;

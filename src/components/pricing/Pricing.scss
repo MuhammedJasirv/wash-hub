@@ -1,0 +1,95 @@
+@use '../../assets/styles/variables.scss' as *;
+.pricing{
+    background: linear-gradient(
+        90deg,
+        rgba(15, 105, 220, 0.15) 0%,
+        rgba(29, 200, 35, 0.15) 100%
+      );
+      padding: 4rem 2rem;
+      text-align: center;
+      .hero{
+        h2{
+            font-size: 45px;
+            font-weight: 500;
+            font-family: $manrope-font;
+            line-height: 80px;
+        }
+        p{
+            font-weight: 400;
+            font-family: $font-family;
+            font-size: 14px;
+            line-height: 24px;
+            opacity: .7;
+            max-width: 63%;
+            margin: auto;
+            margin-top: 40px;
+        }
+      }
+      .pricing-toggle-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 50px;
+        p{
+            font-weight: 400;
+            font-family: $manrope-font;
+            font-size: 25px;
+        }span{
+            font-family: $manrope-font;
+            font-size: 25px;
+            font-weight: 400;
+            background: $gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+      }
+      
+      .pricing-toggle {
+        width: 99px;
+        height: 50px;
+        border-radius: 999px;
+        background-color: #fff;
+        padding: 4px;
+        position: relative;
+        cursor: pointer;
+        border: none;
+        outline: none;
+      
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 999px;
+          padding: 2px;
+          background: $gradient;
+          -webkit-mask: 
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          z-index: 0;
+        }
+      
+        .toggle-thumb {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          background: $gradient;
+          box-shadow: $shadow;
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          transition: transform 0.3s ease-in-out;
+          z-index: 1;
+        }
+      
+        &.on .toggle-thumb {
+          transform: translateX(49px);
+        }
+      
+        &.off .toggle-thumb {
+          transform: translateX(0);
+        }
+      }      
+}

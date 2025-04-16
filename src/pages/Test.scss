@@ -1,62 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+$gradient: linear-gradient(90deg, #0f69dc 0%, #1dc823 100%);
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
-$font-family: 'Poppins', sans-serif;
-$manrope-font: 'Manrope', sans-serif;
-
-.custom-card {
-    color: #fff;
+.custom-Button {
+  .toggle-switch {
+    width: 99px;
+    height: 50px;
+    border-radius: 999px;
+    background-color: #fff;
+    padding: 4px;
     position: relative;
-    border-radius: 16px;
-    max-width: 560px;
-    padding: 40px 20px;
-    
-    
-    // // Gradient border using pseudo-elements
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   inset: 0;
-    //   border-radius: 16px;
-    //   padding: 2px; // Border width
-    //   background: linear-gradient(120deg, #006eff,#00ff91);
-    //   -webkit-mask: 
-    //     linear-gradient(#fff 0 0) content-box, 
-    //     linear-gradient(#fff 0 0);
-    //   -webkit-mask-composite: xor;
-    //   mask-composite: exclude;
-    //   pointer-events: none;
-    // }
-}
+    cursor: pointer;
+    border: none;
+    outline: none;
 
-.custom-icon {
-    margin-bottom: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 10px;
-    img:nth-child(1) {
-        max-width: 280px;
-        height: auto;
-      }
-    img:nth-child(2) {
-        max-width: 125px;
-        max-height: 216px;
-      }
-}
-  
-.custom-title {
-    font-family: $font-family;
-    font-weight: 400; 
-    font-size: 18px;
-    text-align: center;
-}
-  
-.custom-description {
-    font-family: $font-family;
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 24px;
-    text-align: center;
-    opacity: .70;
+    // Gradient border using a pseudo element
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      padding: 2px;
+      background: $gradient;
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      z-index: 0;
+    }
+
+    .toggle-thumb {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: $gradient;
+      box-shadow: $shadow;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      transition: transform 0.3s ease-in-out;
+      z-index: 1;
+    }
+
+    &.on .toggle-thumb {
+      transform: translateX(49px); // Smooth to right
+    }
+
+    &.off .toggle-thumb {
+      transform: translateX(0); // Back to left
+    }
+  }
 }
