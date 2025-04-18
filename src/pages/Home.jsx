@@ -6,6 +6,7 @@ import Service from '../components/service/Service'
 import Vision from '../components/vision/Vision'
 import HowItWorks from '../components/howItWorks/HowItWorks'
 import Pricing from '../components/pricing/Pricing'
+import Footer from '../components/footer/Footer'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <Vision/>
         <HowItWorks/>
         <Pricing/>
+        <Footer/>
     </div>
   )
 }

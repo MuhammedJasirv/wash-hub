@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import './Pricing.scss'
 import PricePoint from '../../assets/images/pricePoint.png'
+import PlayStore from '../../assets/images/playstoreprice.png'
+import AppStore from '../../assets/images/appstoreprice.png'
+import Qa from '../qa/Qa'
 const Pricing = () => {
   return (
     <div className='pricing'>
@@ -27,6 +30,20 @@ const Pricing = () => {
         </div>
         <button className="choose-plan-button">Choose Plan</button>
     </div>
+    <div className='pricing-footer'>
+      <div className='left'>
+        <h2>Download The App Now</h2>
+        <div className='images-download'>
+          <img src={PlayStore} alt="" />
+          <img src={AppStore} alt="" />
+        </div>
+      </div>
+      <div className='rigth'>
+        <h2>We provide Transforming <br />
+        Visions into  All the Digital Reality</h2>
+      </div>
+    </div>
+    <Qa/>
     </div>
   )
 }
