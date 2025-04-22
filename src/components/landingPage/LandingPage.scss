@@ -8,7 +8,21 @@
   border-end-end-radius: 50px;
   border-end-start-radius: 50px;
   position: relative; 
-  z-index: 2;   
+  z-index: 2;
+  
+  @media (max-width: 1200px) {
+    padding: 42px 60px;
+  }
+
+  @media (max-width: 992px) {
+    padding: 42px 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 32px 20px;
+    border-end-end-radius: 30px;
+    border-end-start-radius: 30px;
+  }
 
   .container {
     width: 100%;
@@ -22,9 +36,23 @@
       border-bottom-right-radius: 65px;
       border-bottom-left-radius: 65px;
 
+      @media (max-width: 768px) {
+        border-bottom-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+      }
+
       .logo {
         width: 105px;
         height: 105px;
+        @media (max-width: 992px) {
+          width: 85px;
+          height: 85px;
+        }
+
+        @media (max-width: 576px) {
+          width: 50px;
+          height: 50px;
+        }
       }
 
       .header-title {
@@ -32,12 +60,33 @@
         font-weight: 400;
         line-height: 63px;
         text-align: center;
+        @media (max-width: 1200px) {
+          font-size: 28px;
+          line-height: 50px;
+        }
+
+        @media (max-width: 992px) {
+          font-size: 24px;
+          line-height: 40px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 20px;
+          line-height: 30px;
+        }
+
+        @media (max-width: 576px) {
+          font-size: 15px;
+        }
       }
 
       .menu-icon {
         display: flex;
         flex-direction: column;
         gap: 16px;
+        @media (max-width: 576px) {
+          gap: 7px;
+        }
 
         .menu-line {
           height: 6px;
@@ -46,16 +95,29 @@
 
           &:nth-child(1) {
             width: 72px;
+            @media (max-width: 576px) {
+              width: 50px;
+            }
           }
 
           &:nth-child(2) {
             width: 62px;
             margin-left: 10px;
+            
+            @media (max-width: 576px) {
+              width: 40px;
+              margin-left: 8px;
+            }
           }
 
           &:nth-child(3) {
             width: 49px;
             margin-left: 23px;
+            
+            @media (max-width: 576px) {
+              width: 30px;
+              margin-left: 16px;
+            }
           }
         }
       }
@@ -64,12 +126,16 @@
     .hero {
       position: relative;
       margin-top: 20px;
+      @media (max-width: 768px) {
+        margin-top: 15px;
+      }
       .hero-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+        
 
         h2 {
           font-family: 'Manrope', sans-serif;
@@ -79,6 +145,30 @@
           line-height: 66px;
           margin-bottom: 20px;
           max-width: 1000px;
+          @media (max-width: 1200px) {
+            font-size: 48px;
+            line-height: 56px;
+            max-width: 800px;
+          }
+
+          @media (max-width: 992px) {
+            font-size: 42px;
+            line-height: 50px;
+            max-width: 700px;
+          }
+
+          @media (max-width: 768px) {
+            font-size: 36px;
+            line-height: 44px;
+            max-width: 600px;
+            margin-bottom: 15px;
+          }
+
+          @media (max-width: 576px) {
+            font-size: 28px;
+            line-height: 36px;
+            max-width: 100%;
+          }
         }
 
         .highlight {
@@ -92,11 +182,22 @@
         p, h3 {
           max-width: 682px;
           margin-bottom: 40px;
+          @media (max-width: 768px) {
+            margin-bottom: 30px;
+          }
+
+          @media (max-width: 576px) {
+            margin-bottom: 20px;
+          }
         }
 
         p {
           font-size: 14px;
           line-height: 24px;
+          @media (max-width: 576px) {
+            font-size: 13px;
+            line-height: 20px;
+          }
         }
 
         h3 {
@@ -108,6 +209,18 @@
           color: transparent;
           font-weight: 400;
           line-height: 24px;
+          @media (max-width: 992px) {
+            font-size: 22px;
+          }
+
+          @media (max-width: 768px) {
+            font-size: 20px;
+          }
+
+          @media (max-width: 576px) {
+            font-size: 18px;
+            line-height: 22px;
+          }
         }
 
         .cta-button {
@@ -121,6 +234,17 @@
           font-family: 'Roboto', sans-serif;
           font-size: 24px;
           cursor: pointer;
+          @media (max-width: 992px) {
+            width: 200px;
+            height: 55px;
+            font-size: 22px;
+          }
+
+          @media (max-width: 576px) {
+            width: 180px;
+            height: 50px;
+            font-size: 20px;
+          }
         }
       }
 
@@ -128,14 +252,41 @@
       .hero-imagetwo {
         position: absolute;
         top: 376px;
+        @media (max-width: 1200px) {
+          top: 350px;
+          width: 200px;
+        }
+
+        @media (max-width: 992px) {
+          top: 380px;
+          width: 180px;
+        }
+
+        @media (max-width: 768px) {
+          display: none;
+        }
       }
 
       .hero-imageone {
         left: -110px;
+        @media (max-width: 1200px) {
+          left: -90px;
+        }
+
+        @media (max-width: 992px) {
+          left: -70px;
+        }
       }
 
       .hero-imagetwo {
         right: -170px;
+        @media (max-width: 1200px) {
+          right: -140px;
+        }
+
+        @media (max-width: 992px) {
+          right: -120px;
+        }
       }
       .bubble{
         
@@ -143,6 +294,14 @@
           position: absolute;
           top: -4%;
           left: 20%;
+          @media (max-width: 992px) {
+            width: 80px;
+            height: 80px;
+          }
+  
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
       }
       .bubble-last{
@@ -153,6 +312,9 @@
           right: 13%;
           width: 40px;
           height: 40px;
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
       }
       .bubble-three{
@@ -162,6 +324,14 @@
           left: -1%;
           width: 53px;
           height: 53px;
+          @media (max-width: 992px) {
+            width: 40px;
+            height: 40px;
+          }
+
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
         img:nth-child(2){
           position: absolute;
@@ -169,6 +339,14 @@
           right: -7%;
           width: 90px;
           height: 90px;
+          @media (max-width: 992px) {
+            width: 70px;
+            height: 70px;
+          }
+
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
       }
     }

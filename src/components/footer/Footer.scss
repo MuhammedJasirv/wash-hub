@@ -1,104 +1,268 @@
 @use '../../assets/styles/variables.scss' as *;
+
 .footer {
   background-color: #000;
   color: #fff;
-  // padding: 1rem;
-  .sections{
+
+  .sections {
     display: flex;
     justify-content: space-between;
     padding: 3.3rem;
-  .first-section{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    img{
-      width: 105;
-      height: 105;
-    }p{
-      font-size: 20px;
+    flex-wrap: wrap; // Allow sections to wrap on smaller screens
+
+    .first-section {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      
+      img {
+        width: 105px;
+        height: 105px;
+      }
+      
+      p {
+        font-size: 20px;
+      }
     }
 
-  }.secount-section{
+    .secount-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+      p {
+        font-size: 20px;
+      }
+    }
+
+    .thrird-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      gap: 50px;
+      
+      p {
+        font-size: 20px;
+      }
+    }
+
+    .last-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: end;
+      
+      p:nth-child(1) {
+        font-weight: 500;
+        font-size: 21px;
+        padding: 5px 10px;
+        background: $gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 10px;
+          padding: 2px;
+          background: $gradient;
+          -webkit-mask: 
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          z-index: 0;
+        }
+      }
+      
+      p:nth-child(2) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .footer-section {
     display: flex;
-    flex-direction: column;
+    padding: 3rem 4rem;
+    position: relative;
     justify-content: space-between;
-  p{
-    font-size: 20px;
-  }
-}.thrird-section{
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  gap: 50px;
-  p{
-    font-size: 20px;
-  }
-}
-.last-section{
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
-p:nth-child(1){
-  font-weight: 500;
-  font-size: 21px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  background: $gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 10px;
-    padding: 2px;
-    background: $gradient;
-    -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: 0;
-  }
-}
-p:nth-child(2){
-  font-size: 24px ;
-}
-}
-}
-.footer-section{
-  display: flex;
-  padding: 3rem;
-  position: relative;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  justify-content: space-between;
-  align-items: center;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 1px; // This becomes your "border"
-    width: 100%;
-    background: linear-gradient(90deg, #0f69dc, #1dc823);
-    z-index: 1;
-    pointer-events: none;
-    border-radius: 0; // optional, can remove if unnecessary
-  }
-  p{
-    font-size: 20px;
-  }
-  .social-media{
-    display: flex;
     align-items: center;
-    gap: 15px;
-    p{
+    flex-wrap: wrap; // Allow content to wrap on smaller screens
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, #0f69dc, #1dc823);
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    p {
       font-size: 20px;
+    }
+    
+    .social-media {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      
+      p {
+        font-size: 20px;
+      }
     }
   }
 }
+
+// Responsive adjustments
+@media (max-width: 1200px) {
+  .footer {
+    .sections {
+      gap: 40px;
+      padding: 2.5rem;
+      
+      .first-section,
+      .secount-section,
+      .thrird-section,
+      .last-section {
+        gap: 40px;
+      }
+    }
+    
+    .footer-section {
+      padding: 2.5rem;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .footer {
+    .sections {
+      padding: 2rem;
+      
+      .first-section,
+      .secount-section,
+      .thrird-section,
+      .last-section {
+        gap: 30px;
+        
+        p {
+          font-size: 18px;
+        }
+      }
+      
+      .last-section {
+        p:nth-child(1) {
+          font-size: 19px;
+        }
+        
+        p:nth-child(2) {
+          font-size: 22px;
+        }
+      }
+    }
+    
+    .footer-section {
+      padding: 2rem;
+      
+      p {
+        font-size: 18px;
+      }
+      
+      .social-media p {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    .sections {
+      flex-direction: column;
+      gap: 50px;
+      padding: 1.5rem;
+      
+      .first-section,
+      .secount-section,
+      .thrird-section {
+        align-items: center;
+        text-align: center;
+      }
+      
+      .last-section {
+        align-items: center;
+        text-align: center;
+      }
+    }
+    
+    .footer-section {
+      flex-direction: column;
+      gap: 20px;
+      padding: 1.5rem;
+      text-align: center;
+      
+      .social-media {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    .sections {
+      padding: 1rem;
+      gap: 40px;
+      
+      .first-section,
+      .secount-section,
+      .thrird-section,
+      .last-section {
+        gap: 20px;
+        
+        p {
+          font-size: 16px;
+        }
+      }
+      
+      .first-section {
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      
+      .last-section {
+        p:nth-child(1) {
+          font-size: 17px;
+        }
+        
+        p:nth-child(2) {
+          font-size: 20px;
+        }
+      }
+    }
+    
+    .footer-section {
+      padding: 1rem;
+      
+      p {
+        font-size: 16px;
+      }
+      
+      .social-media {
+        gap: 10px;
+        
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
 }

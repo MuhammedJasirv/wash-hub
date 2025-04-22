@@ -1,57 +1,62 @@
 @use '../../assets/styles/variables.scss' as *;
 
 .qa {
-    text-align: center;
-    font-family: $manrope-font;
-    font-size: 45px;
-    font-weight: 400;
-    margin-top: 80px;
+  text-align: center;
+  font-family: $manrope-font;
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: 80px;
 
-  
-    .options {
-      display: flex;
-      margin-top: 40px;
-      .left-section {
-        width: 50%;
-        padding: 1rem;
-        padding-left: 6rem;
-      }
-  
-      .right {
-        width: 50%;
-        padding: 1rem;
-        padding-right: 6rem;
-      }
+  .options {
+    display: flex;
+    flex-wrap: wrap; // Allow wrapping on smaller screens
+    margin-top: 40px;
+    
+    .left-section {
+      width: 50%;
+      padding: 1rem;
+      padding-left: 6rem;
+    }
+
+    .right {
+      width: 50%;
+      padding: 1rem;
+      padding-right: 6rem;
     }
   }
+}
+
+.list-items {
+  position: relative;
+  padding: 2px;
+  border-radius: 12px;
+  background-color: white;
+  margin-bottom: 16px;
+  z-index: 0;
+  overflow: hidden;
+  padding: .7rem;
   
-  .list-items {
-    position: relative;
-    padding: 2px;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
     border-radius: 12px;
-    background-color: white;
-    margin-bottom: 16px;
-    z-index: 0;
-    overflow: hidden;
-    padding: .7rem;
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 12px;
-      padding: 1px;
-      background: linear-gradient(90deg, #0f69dc, #1dc823);
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      z-index: -1;
-      pointer-events: none;
-    }.list-titile{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    padding: 1px;
+    background: linear-gradient(90deg, #0f69dc, #1dc823);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .list-titile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
     p {
       font-size: 14px;
       font-family: $font-family;
@@ -61,8 +66,9 @@
       font-size: 25px;
     }
   }
+  
   .items-details {
-    position: relative; // Required for ::before to be positioned correctly
+    position: relative;
     padding: 0.3rem;
     margin: 0.3rem;
   
@@ -72,18 +78,97 @@
       line-height: 28px;    
     }
   
-    // Gradient top border via pseudo-element
     &::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
-      height: 1px; // This becomes your "border"
+      height: 1px;
       width: 100%;
       background: linear-gradient(90deg, #0f69dc, #1dc823);
       z-index: 1;
       pointer-events: none;
-      border-radius: 0; // optional, can remove if unnecessary
     }
   }
+}
+
+// Responsive adjustments
+@media (max-width: 1024px) {
+  .qa {
+    font-size: 38px;
+    
+    .options {
+      .left-section, .right {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+    }
   }
+}
+
+@media (max-width: 768px) {
+  .qa {
+    font-size: 32px;
+    margin-top: 60px;
+    
+    .options {
+      flex-direction: column;
+      
+      .left-section, .right {
+        width: 100%;
+        padding: 1rem 2rem;
+      }
+    }
+  }
+  
+  .list-items {
+    .list-titile {
+      p {
+        font-size: 13px;
+      }
+      
+      span {
+        font-size: 22px;
+      }
+    }
+    
+    .items-details p {
+      font-size: 13px;
+      line-height: 24px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .qa {
+    font-size: 28px;
+    margin-top: 40px;
+    
+    .options {
+      margin-top: 30px;
+      
+      .left-section, .right {
+        padding: 1rem;
+      }
+    }
+  }
+  
+  .list-items {
+    padding: 0.5rem;
+    
+    .list-titile {
+      p {
+        font-size: 12px;
+      }
+      
+      span {
+        font-size: 20px;
+      }
+    }
+    
+    .items-details p {
+      font-size: 12px;
+      line-height: 22px;
+    }
+  }
+}
