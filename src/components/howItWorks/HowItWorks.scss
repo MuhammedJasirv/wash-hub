@@ -33,7 +33,7 @@
             margin: auto;
             margin-top: 30px;
             text-align: center;
-            
+            z-index: 2;
             @media (max-width: 992px) {
                 max-width: 80%;
             }
@@ -71,6 +71,7 @@
             
             @media (max-width: 768px) {
                 max-width: 150px;
+                // display: no;
             }
         }
     }
@@ -102,6 +103,7 @@
             @media (max-width: 768px) {
                 width: 40px;
                 top: 20%;
+                z-index: 0;
             }
         }
         
@@ -118,6 +120,7 @@
             @media (max-width: 768px) {
                 width: 50px;
                 top: 10%;
+                display: none;
             }
         }
     }
@@ -186,6 +189,7 @@
         
         @media (max-width: 768px) {
             max-width: 80px;
+            display: none;
         }
     }
 }
