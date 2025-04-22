@@ -2,14 +2,17 @@ import React from 'react';
 import './Service.scss';
 import BlurBg from '../../assets/images/Blur.png'
 import iconData from '../../assets/images/serviceData.png'
-
+import Bubble from '../../assets/images/bubbles/One1.png'
 const Service = () => {
   return (
     <section className="service">
       <div className="center-light">
         <img src={BlurBg} alt="Blur Effect" />
       </div>
-
+      <div className="bubble">
+          <img src={Bubble} alt="" />
+          <img src={Bubble} alt="" />
+        </div>
       <div className="service-title">
         <h2>
           We provide Transforming<br />
@@ -36,6 +39,9 @@ const Service = () => {
             <Card/>
         </div>
       </div>
+      <div className="bubble-last">
+          <img src={Bubble} alt="" />
+        </div>
     </section>
   );
 };

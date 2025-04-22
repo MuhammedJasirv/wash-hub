@@ -176,6 +176,20 @@
         line-height: 24px;
         margin-top: 10px;
       }
+      .bubble-footer{
+        img:nth-child(1){
+          position: absolute;
+          right: 13%;
+          bottom: 22%;
+          width: 76px;
+        }
+        img:nth-child(2){
+          position: absolute;
+          left: 17%;
+          width: 76px;
+          bottom: 19%;
+        }
+      }
   }
   .vision-footer{
     background-color: white;
@@ -216,6 +230,19 @@
     img:nth-child(2){
       // background-color: green;
       width: 50%;
+    }
+  }
+  .bubble{
+    img:nth-child(1){
+      position: absolute;
+      left: 10%;
+      top: 6%;
+      width: 76px;
+    }
+    img:nth-child(2){
+      position: absolute;
+      right: 10%;
+      width: 134px;
     }
   }
 }

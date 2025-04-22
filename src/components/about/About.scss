@@ -12,6 +12,15 @@
 .features {
     display: flex;
     justify-content: center;
+    .bubble{
+      margin-top: 440px;
+      img{
+        position: absolute;
+        left: 3%;
+        width:129px ;
+        height:129px ;
+      }
+    }
     
   }
   

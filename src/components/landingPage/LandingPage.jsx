@@ -3,6 +3,7 @@ import "./LandingPage.scss";
 import logo from "../../assets/images/LOOG 1.png";
 import Maskgroup from "../../assets/images/Mask group.png";
 import DashbordLogo from "../../assets/images/logodash.png";
+import Bubble from '../../assets/images/bubbles/One1.png'
 const LandingPage = () => {
   return (
     <div className="landing-page">
@@ -20,6 +21,9 @@ const LandingPage = () => {
 
         {/* Hero Section */}
         <section className="hero">
+          <div className="bubble">
+            <img src={Bubble} alt="" />
+          </div>
           <div className="hero-content">
             <h2>
               Effortless Laundry Management with{" "}
@@ -30,8 +34,15 @@ const LandingPage = () => {
               scheduling pickups, keeping track of inventory, and handling
               customer requests
             </p>
+            <div className="bubble-last">
+            <img src={Bubble} alt="" />
+          </div>
             <h3>Request for Demo 1028 101 3030</h3>
             <button className="cta-button">Book a Demo</button>
+          </div>
+          <div className="bubble-three">
+            <img src={Bubble} alt="" />
+            <img src={Bubble} alt="" />
           </div>
           <div className="hero-image">
             <img

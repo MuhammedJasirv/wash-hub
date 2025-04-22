@@ -63,7 +63,7 @@
 
     .hero {
       position: relative;
-
+      margin-top: 20px;
       .hero-content {
         display: flex;
         flex-direction: column;
@@ -136,6 +136,40 @@
 
       .hero-imagetwo {
         right: -170px;
+      }
+      .bubble{
+        
+        img{
+          position: absolute;
+          top: -4%;
+          left: 20%;
+        }
+      }
+      .bubble-last{
+        
+        img{
+          position: absolute;
+          top: 3%;
+          right: 13%;
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .bubble-three{
+        
+        img:nth-child(1){
+          position: absolute;
+          left: -1%;
+          width: 53px;
+          height: 53px;
+        }
+        img:nth-child(2){
+          position: absolute;
+          top: 50%;
+          right: -7%;
+          width: 90px;
+          height: 90px;
+        }
       }
     }
 

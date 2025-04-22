@@ -45,7 +45,22 @@
         left: 50%;
         z-index: 0;
         transform: translate(-50%, -50%);
-      }      
+      }
+    .bubble{
+
+        img:nth-child(1){
+            position: absolute;
+            left: 5%;
+            width: 81px;
+            top: 30%;
+        }
+        img:nth-child(2){
+            position: absolute;
+            right: 7%;
+            width: 94px;
+            top: 12%;
+        }
+    }      
     
 }
 .custom-card {
