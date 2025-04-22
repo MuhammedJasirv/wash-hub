@@ -1,5 +1,5 @@
 import React from "react";
-import "./vision.scss";
+import "./Vision.scss";
 import MessageIcon from "../../assets/images/message.png";
 import BoxIcon from "../../assets/images/box.png";
 import VisionPoints from "../../assets/images/visionpoints.png";
