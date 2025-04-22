@@ -82,7 +82,7 @@ p:nth-child(2){
     position: absolute;
     top: 0;
     left: 0;
-    height: .50px; // This becomes your "border"
+    height: 1px; // This becomes your "border"
     width: 100%;
     background: linear-gradient(90deg, #0f69dc, #1dc823);
     z-index: 1;

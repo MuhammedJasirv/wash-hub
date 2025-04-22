@@ -46,55 +46,49 @@ const LandingPage = () => {
             />
 
             {/* Graph Section */}
-            <div className="graph">
-              {/* Sidebar */}
-              <div className="sidebar">
-                <div className="logodash">
-                  <img src={DashbordLogo} alt="Dashboard Logo" />
+            <div className="dashboard-container">
+                  {/* Sidebar */}
+                  <div className="sidebar">
+                    <div className="logodash">
+                      <img src={DashbordLogo} alt="Dashboard Logo" />
+                    </div>
+                    {[...Array(6)].map((_, index) => (
+                      <div className="menu-item" key={index}></div>
+                    ))}
+                  </div>
+            
+                  {/* Main Content */}
+                  <div className="main-content">
+                    {/* Header Cards */}
+                    <div className="header-cards">
+                      {[...Array(4)].map((_, index) => (
+                        <div className="header-card" key={index}></div>
+                      ))}
+                    </div>
+            
+                    <div className="main-body">
+                      {/* Left Column */}
+                      <div className="left-section">
+                        <div className="graph"></div>
+                        <div className="donut-section">
+                          <div className="donut-placeholder"></div>
+                          <div className="donut-info">
+                            {[...Array(3)].map((_, index) => (
+                              <div className="donut-line" key={index}></div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+            
+                      {/* Right Column Cards */}
+                      <div className="right-section">
+                        {[...Array(4)].map((_, index) => (
+                          <div className="right-card" key={index}></div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="menu-item"></div>
-                <div className="menu-item"></div>
-                <div className="menu-item"></div>
-                <div className="menu-item"></div>
-                <div className="menu-item"></div>
-                <div className="menu-item"></div>
-              </div>
-
-              {/* Top Cards */}
-              <div className="top-cards">
-                <div className="top-card"></div>
-                <div className="top-card"></div>
-                <div className="top-card"></div>
-                <div className="top-card"></div>
-              </div>
-
-              {/* Chart Area */}
-              <div className="chart"></div>
-
-              {/* Right Cards */}
-              <div className="right-cards">
-                <div className="right-card"></div>
-                <div className="right-card"></div>
-                <div className="right-card"></div>
-                <div className="right-card"></div>
-              </div>
-
-              {/* Bottom Card with Donut */}
-              <div className="bottom-card">
-                <div className="donut-placeholder"></div>
-                <div className="bottom-content">
-                  <div
-                    className="right-card"
-                    style={{ marginBottom: "8px", height: "20px" }}
-                  ></div>
-                  <div
-                    className="right-card"
-                    style={{ marginBottom: "8px", height: "20px" }}
-                  ></div>
-                  <div className="right-card" style={{ height: "20px" }}></div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </div>

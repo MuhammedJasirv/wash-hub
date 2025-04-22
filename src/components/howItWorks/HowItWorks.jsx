@@ -8,9 +8,17 @@ import WorkThree from '../../assets/images/work/work3.png'
 import WorkThreeHand from '../../assets/images/work/workhand3.png'
 import WorkFour from '../../assets/images/work/work4.png'
 import WorkFourHand from '../../assets/images/work/workhand4.png'
+import BlueLightOne from '../../assets/images/desing/blue crile.png'
+import BlueLightTwo from '../../assets/images/desing/bleeCrileTwo.png'
 const HowItWorks = () => {
   return (
     <div className='how-it-work'>
+      <div className="blue-circle">
+        <img src={BlueLightOne} alt="" />
+      </div>
+      <div className="blue-circle-center">
+        <img src={BlueLightTwo} alt="" />
+      </div>
         <div className='hero'>
             <h2>How Its work ?</h2>
             <p>Running a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, and handling  requestsRunning a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, and handling  requestsRunning a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, </p>

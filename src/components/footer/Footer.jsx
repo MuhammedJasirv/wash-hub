@@ -4,6 +4,7 @@ import Store from '../../assets/images/footerStores.png'
 import FaceBook from '../../assets/images/FaceBook.png'
 import Instagram from '../../assets/images/Insatgram.png'
 import LinkedIn from '../../assets/images/LinkedIn.png'
+import './footer.scss'
 const Footer = () => {
   return (
         <footer className="footer">

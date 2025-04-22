@@ -3,9 +3,15 @@ import './vision.scss'
 import MessageIcon from '../../assets/images/message.png'
 import BoxIcon from '../../assets/images/box.png'
 import VisionPoints from '../../assets/images/visionpoints.png'
+import LeftBuble from '../../assets/images/desing/leftBubules.png'
+import RigthBuble from '../../assets/images/desing/rigthBubules.png'
 const Vision = () => {
   return (
     <div className='vision'>
+        <div className='desing-bubles'>
+            <img src={LeftBuble} alt="" />
+            <img src={RigthBuble} alt="" />
+        </div>
         <div className='vision-head'>
             <h2 className='titile'>We provide Transforming <br />
             Visions into  All the Digital Reality</h2>
