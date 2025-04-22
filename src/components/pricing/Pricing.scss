@@ -7,6 +7,7 @@
     rgba(29, 200, 35, 0.15) 100%
   );
   text-align: center;
+  overflow-x: hidden;
   
   .hero {
     padding-top: 4rem;
@@ -17,9 +18,15 @@
       font-family: $manrope-font;
       line-height: 80px;
       
+      @media (max-width: 992px) {
+        font-size: 38px;
+        line-height: 60px;
+      }
+      
       @media (max-width: 768px) {
         font-size: 32px;
         line-height: 48px;
+        padding: 0 20px;
       }
       
       @media (max-width: 480px) {
@@ -31,47 +38,112 @@
     p {
       font-weight: 400;
       font-family: $font-family;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 24px;
       opacity: .7;
       max-width: 63%;
       margin: auto;
       margin-top: 40px;
       
+      @media (max-width: 1200px) {
+        max-width: 70%;
+      }
+      
       @media (max-width: 992px) {
         max-width: 80%;
+        font-size: 15px;
       }
       
       @media (max-width: 768px) {
         max-width: 90%;
         margin-top: 20px;
+        padding: 0 20px;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 14px;
+        line-height: 22px;
       }
     }
   }
   
-  .pricing-toggle-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 50px;
+  
+.pricing-toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 50px;
+  
+  p, span {
+    font-family: $manrope-font;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0; // Ensure no default margins interfere
+  }
+  
+  div {
+    padding: 1rem;
+  }
+  
+  span {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  // Responsive adjustments (won't affect desktop)
+  @media (max-width: 1200px) {
+    // No changes needed for this breakpoint
+  }
+
+  @media (max-width: 992px) {
+    gap: 0.8rem;
     
     p, span {
-      font-family: $manrope-font;
-      font-size: 25px;
-      font-weight: 400;
-      
-      @media (max-width: 768px) {
-        font-size: 20px;
-      }
+      font-size: 22px;
     }
     
-    span {
-      background: $gradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    div {
+      padding: 0.8rem;
     }
   }
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    gap: 0.6rem;
+    
+    p, span {
+      font-size: 20px;
+    }
+    
+    div {
+      padding: 0.6rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 0px;
+    row-gap: 0.5rem;
+    // background-color: red;
+    p, span {
+      font-size: 24px;
+    }
+    
+    div {
+      padding: 0rem;
+    }
+  }
+
+  // Extra small devices
+  @media (max-width: 375px) {
+    p, span {
+      font-size: 14px;
+    }
+  }
+}
   
   .pricing-toggle {
     width: 99px;
@@ -83,6 +155,7 @@
     cursor: pointer;
     border: none;
     outline: none;
+    margin: 0 10px;
   
     &::before {
       content: "";
@@ -120,6 +193,20 @@
       transform: translateX(0);
     }
     
+    @media (max-width: 768px) {
+      width: 90px;
+      height: 45px;
+      
+      .toggle-thumb {
+        width: 37px;
+        height: 37px;
+      }
+      
+      &.on .toggle-thumb {
+        transform: translateX(45px);
+      }
+    }
+    
     @media (max-width: 480px) {
       width: 80px;
       height: 40px;
@@ -145,7 +232,18 @@
     background-repeat: no-repeat;
     border-radius: 21px;
     color: white;
-    padding: 0 20px;
+    padding: 40px 20px;
+    
+    @media (max-width: 768px) {
+      margin-top: 40px;
+      border-radius: 16px;
+    }
+    
+    @media (max-width: 480px) {
+      margin-top: 30px;
+      padding: 30px 15px;
+      border-radius: 0px;
+    }
     
     .price {
       font-family: $manrope-font;
@@ -154,21 +252,30 @@
       background: linear-gradient(90deg, #0f69dc 30%, #1dc823 70%);;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      line-height: 1;
       
       span {
         font-size: 80px;
       }
       
-      @media (max-width: 768px) {
-        font-size: 80px;
+      @media (max-width: 992px) {
+        font-size: 90px;
         
         span {
-          font-size: 60px;
+          font-size: 70px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        font-size: 70px;
+        
+        span {
+          font-size: 50px;
         }
       }
       
       @media (max-width: 480px) {
-        font-size: 60px;
+        font-size: 50px;
         
         span {
           font-size: 40px;
@@ -180,17 +287,21 @@
       font-size: 32px;
       font-weight: 600;
       font-family: $manrope-font;
-      margin-top: -20px;
+      margin-top: -10px;
+      
+      @media (max-width: 768px) {
+        font-size: 28px;
+      }
       
       @media (max-width: 480px) {
-        font-size: 24px;
-        margin-top: -10px;
+        font-size: 22px;
+        margin-top: -5px;
       }
     }
     
     .description {
       font-weight: 400;
-      font-size: 14px;
+      font-size: 16px;
       font-family: $font-family;
       opacity: .7;
       line-height: 24px;
@@ -199,8 +310,18 @@
       margin-left: auto;
       margin-right: auto;
       
+      @media (max-width: 992px) {
+        font-size: 15px;
+      }
+      
       @media (max-width: 768px) {
+        max-width: 90%;
+        font-size: 14px;
+      }
+      
+      @media (max-width: 480px) {
         max-width: 100%;
+        line-height: 22px;
       }
     }
     
@@ -212,17 +333,38 @@
       gap: 18px;
       margin-top: 30px;
       margin-bottom: 20px;
+      padding: 0 10px;
+      
+      @media (max-width: 480px) {
+        gap: 12px;
+        margin-top: 20px;
+      }
       
       .items {
         display: flex;
         gap: 10px;
+        align-items: flex-start;
+        max-width: 80%;
+        
+        @media (max-width: 768px) {
+          max-width: 90%;
+        }
+        
+        @media (max-width: 480px) {
+          max-width: 100%;
+        }
         
         p {
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 400;
           font-family: $font-family;
           opacity: .7;
           text-align: left;
+          margin: 0;
+          
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -236,15 +378,27 @@
       border: none;
       color: $text-light;
       font-family: 'Roboto', sans-serif;
-      font-size: 24px;
+      font-size: 20px;
+      font-weight: 500;
       cursor: pointer;
       margin-top: 21px;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+      }
+      
+      @media (max-width: 768px) {
+        width: 200px;
+        height: 55px;
+      }
       
       @media (max-width: 480px) {
         width: 180px;
         height: 50px;
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }
@@ -258,29 +412,57 @@
     display: flex;
     justify-content: center;
     color: white;
+    padding: 40px 0;
+    
+    @media (max-width: 1200px) {
+      padding: 30px 0;
+    }
     
     @media (max-width: 992px) {
       flex-direction: column;
       align-items: center;
       text-align: center;
+      margin-top: 60px;
+      padding: 30px 20px;
+    }
+    
+    @media (max-width: 480px) {
+      margin-top: 40px;
+      padding: 20px 15px;
     }
     
     .left {
       width: 50%;
+      padding: 0 40px;
+      
+      @media (max-width: 1200px) {
+        padding: 0 30px;
+      }
       
       @media (max-width: 992px) {
         width: 100%;
         padding: 0 20px;
+        margin-bottom: 30px;
       }
       
       h2 {
         font-family: $manrope-font;
         font-size: 35px;
         font-weight: 700;
-        margin-top: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        
+        @media (max-width: 1200px) {
+          font-size: 32px;
+        }
         
         @media (max-width: 768px) {
           font-size: 28px;
+          margin-bottom: 15px;
+        }
+        
+        @media (max-width: 480px) {
+          font-size: 24px;
         }
       }
       
@@ -291,6 +473,10 @@
         margin-bottom: 30px;
         justify-content: center;
         
+        @media (max-width: 768px) {
+          gap: 20px;
+        }
+        
         @media (max-width: 480px) {
           flex-direction: column;
           gap: 15px;
@@ -300,29 +486,71 @@
         img {
           border: 5px solid rgba(217, 217, 217,0.4);
           border-radius: 8px;
-          max-width: 100%;
+          max-width: 180px;
           height: auto;
+          transition: transform 0.3s;
+          
+          &:hover {
+            transform: scale(1.05);
+          }
+          
+          @media (max-width: 768px) {
+            max-width: 150px;
+          }
+          
+          @media (max-width: 480px) {
+            max-width: 160px;
+          }
         }            
       }
     }
     
-    .rigth {
+    .right {
       width: 50%;
       text-align: center;
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 40px;
+      
+      @media (max-width: 1200px) {
+        padding: 0 30px;
+      }
       
       @media (max-width: 992px) {
         width: 100%;
-        padding: 0 20px 40px;
+        padding: 0 20px;
       }
       
       h2 {
         font-family: $manrope-font;
         font-weight: 500;
         font-size: 38px;
+        margin-bottom: 20px;
+        
+        @media (max-width: 1200px) {
+          font-size: 34px;
+        }
         
         @media (max-width: 768px) {
           font-size: 28px;
+        }
+        
+        @media (max-width: 480px) {
+          font-size: 24px;
+        }
+      }
+      
+      .contact-info {
+        font-family: $font-family;
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 80%;
+        
+        @media (max-width: 768px) {
+          font-size: 16px;
+          max-width: 100%;
         }
       }
     }

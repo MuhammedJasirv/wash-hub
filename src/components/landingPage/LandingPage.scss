@@ -32,96 +32,142 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       position: relative;
       border-bottom-right-radius: 65px;
       border-bottom-left-radius: 65px;
-
+      padding: 10px 20px;
+    
       @media (max-width: 768px) {
         border-bottom-right-radius: 40px;
         border-bottom-left-radius: 40px;
+        padding: 0px 0px;
       }
-
+    
       .logo {
         width: 105px;
         height: 105px;
+    
         @media (max-width: 992px) {
           width: 85px;
           height: 85px;
         }
-
+    
         @media (max-width: 576px) {
           width: 50px;
           height: 50px;
         }
+    
+        @media (max-width: 450px) {
+          width: 40px;
+          height: 40px;
+        }
       }
-
+    
       .header-title {
         font-size: 32px;
         font-weight: 400;
         line-height: 63px;
         text-align: center;
+    
         @media (max-width: 1200px) {
           font-size: 28px;
           line-height: 50px;
         }
-
+    
         @media (max-width: 992px) {
           font-size: 24px;
           line-height: 40px;
         }
-
+    
         @media (max-width: 768px) {
           font-size: 20px;
           line-height: 30px;
         }
-
+    
         @media (max-width: 576px) {
           font-size: 15px;
         }
+    
+        @media (max-width: 450px) {
+          font-size: 14px;
+          line-height: 20px;
+        }
       }
-
+    
       .menu-icon {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
         gap: 16px;
+    
         @media (max-width: 576px) {
           gap: 7px;
         }
-
+    
+        @media (max-width: 450px) {
+          gap: 4px;
+        }
+    
         .menu-line {
           height: 6px;
           background: $gradient;
           border-radius: 100px;
-
+    
+          @media (max-width: 576px) {
+            height: 5px;
+          }
+    
+          @media (max-width: 450px) {
+            height: 4px;
+          }
+    
           &:nth-child(1) {
             width: 72px;
+    
             @media (max-width: 576px) {
               width: 50px;
             }
+    
+            @media (max-width: 450px) {
+              width: 40px;
+            }
           }
-
+    
           &:nth-child(2) {
             width: 62px;
             margin-left: 10px;
-            
+    
             @media (max-width: 576px) {
               width: 40px;
               margin-left: 8px;
             }
+    
+            @media (max-width: 450px) {
+              width: 30px;
+              margin-left: 6px;
+            }
           }
-
+    
           &:nth-child(3) {
             width: 49px;
             margin-left: 23px;
-            
+    
             @media (max-width: 576px) {
               width: 30px;
               margin-left: 16px;
+            }
+    
+            @media (max-width: 450px) {
+              width: 20px;
+              margin-left: 12px;
             }
           }
         }
       }
     }
+    
 
     .hero {
       position: relative;

@@ -13,7 +13,7 @@ const Pricing = () => {
         </div>
         <div className="pricing-toggle-container">
       <p>Yearly Pricing</p>
-      <div style={{ padding: "2rem" }}>
+      <div>
         <ToggleSwitch />
       </div>
       <span>Monthly Pricing</span>

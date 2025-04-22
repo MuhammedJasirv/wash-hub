@@ -15,7 +15,7 @@ const Footer = () => {
             <p>+91 9099 990 999</p>
           </div>
           <div className='secount-section'>
-          <img src={Logo} style={{maxWidth:'105px',visibility:'hidden'}} alt="" />
+          <img src={Logo}  alt="" />
             <p>MAIL US</p>
             <p>laundryace@gmail.com</p>
           </div>
