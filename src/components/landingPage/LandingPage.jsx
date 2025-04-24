@@ -50,14 +50,14 @@ const LandingPage = () => {
           <div className="hero-left">
             <motion.div
               className="bubble"
-              animate={{ y: [10, -10, 0] }} // up and back down
+              animate={{ y: [0, -10, 0] }} // up and back down
               transition={{
-                duration: 2,
+                duration: 52,
                 repeat: Infinity,
                 repeatType: "loop",
                 ease: "easeInOut",
               }}
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileHover={{ scale: 1.1, rotate: 8 }}
             >
               <img src={Bubble} alt="bubble" />
             </motion.div>
