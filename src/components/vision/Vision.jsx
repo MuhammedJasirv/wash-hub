@@ -1,23 +1,86 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import "./Vision.scss";
 import MessageIcon from "../../assets/images/message.png";
 import BoxIcon from "../../assets/images/box.png";
 import VisionPoints from "../../assets/images/visionpoints.png";
 import LeftBuble from "../../assets/images/desing/leftBubules.png";
 import RigthBuble from "../../assets/images/desing/rigthBubules.png";
-import Bubble from '../../assets/images/bubbles/One1.png'
+import Bubble from '../../assets/images/bubbles/One1.png';
 const Vision = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  };
+
+  const slideUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  // Bubble float animation
+  const bubbleFloat = {
+    float: {
+      y: [0, -5, 0],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
   return (
-    <div className="vision">
+    <div className="vision" ref={ref}>
       <div className="desing-bubles">
         <img src={LeftBuble} alt="" />
         <img src={RigthBuble} alt="" />
       </div>
-      <div className="bubble">
-        <img src={Bubble} alt="" />
-        <img src={Bubble} alt="" />
-      </div>
-      <div className="vision-head">
+      <motion.div 
+        className="bubble"
+        initial={{ opacity: 0 }}
+        animate={isInView ? { 
+          opacity: 1,
+          transition: { duration: 0.8 }
+        } : {}}
+      >
+        <motion.img 
+          src={Bubble} 
+          alt=""
+          animate={isInView ? {
+            y: [0, -8, 0],
+            transition: {
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1
+            }
+          } : {}}
+        />
+        <motion.img 
+          src={Bubble} 
+          alt=""
+          animate={isInView ? {
+            y: [0, 8, 0],
+            transition: {
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1.5
+            }
+          } : {}}
+        />
+      </motion.div>
+      <motion.div 
+        className="vision-head"
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={slideUp}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
         <h2 className="titile">
           We provide Transforming <br />
           Visions into  All the Digital Reality
@@ -26,18 +89,45 @@ const Vision = () => {
           Running a laundry business can be complex. From managing scheduling{" "}
           <br /> pickups, keeping track of inventory, and handling requests
         </p>
-      </div>
-      <div className="vision-contents">
+      </motion.div>
+      <motion.div  className="vision-contents"
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={fadeIn}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
         <div className="left">
           <div className="hero">
             <div className="leftt">
-              <div className="graph-one"></div>
+            <motion.div 
+                className="graph-one"
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { 
+                  opacity: 1, 
+                  x: 0,
+                  transition: { duration: 0.6, delay: 0.6 }
+                } : {}}
+              />
             </div>
             <div className="right">
-              <div className="graph-one"></div>
+            <motion.div 
+                className="graph-one"
+                initial={{ opacity: 0, x: 20 }}
+                animate={isInView ? { 
+                  opacity: 1, 
+                  x: 0,
+                  transition: { duration: 0.6, delay: 0.8 }
+                } : {}}
+              />
             </div>
           </div>
-          <div className="content">
+          <motion.div className="content"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { 
+              opacity: 1,
+              transition: { duration: 0.8, delay: 1.0 }
+            } : {}}
+            >
             <h2>provide Transforming</h2>
             <p>
               Running a laundry business can be complex. From managing orders to
@@ -52,13 +142,31 @@ const Vision = () => {
               managing orders to scheduling all the pickups, keeping track of
               inventory, and the handling requests all the best of the theam
             </p>
-          </div>
+          </motion.div>
         </div>
         <div className="right">
-          <div className="top">
+          <motion.div className="top"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { 
+              opacity: 1,
+              transition: { duration: 0.6, delay: 0.6 }
+            } : {}}
+            >
             <div className="hero">
               <h2> provide Transforming </h2>
-              <img src={MessageIcon} alt="" />
+              <motion.img 
+                src={MessageIcon} 
+                alt=""
+                initial={{ scale: 0.8 }}
+                animate={isInView ? { 
+                  scale: 1,
+                  transition: { 
+                    type: "spring", 
+                    stiffness: 200,
+                    delay: 0.8
+                  }
+                } : {}}
+              />
             </div>
             <p>
               Running a laundry business can be complex. From managing orders to
@@ -67,11 +175,29 @@ const Vision = () => {
               business can be complex. From managing orders to scheduling all
               the pickups
             </p>
-          </div>
-          <div className="down">
+          </motion.div>
+          <motion.div className="down"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { 
+              opacity: 1,
+              transition: { duration: 0.6, delay: 0.8 }
+            } : {}}
+          >
             <div className="hero">
               <h2> provide Transforming </h2>
-              <img src={BoxIcon} alt="" />
+              <motion.img 
+                src={BoxIcon} 
+                alt=""
+                initial={{ scale: 0.8 }}
+                animate={isInView ? { 
+                  scale: 1,
+                  transition: { 
+                    type: "spring", 
+                    stiffness: 200,
+                    delay: 1.0
+                  }
+                } : {}}
+              />
             </div>
             <p>
               Running a laundry business can be complex. From managing orders to
@@ -80,14 +206,49 @@ const Vision = () => {
               business can be complex. From managing orders to scheduling all
               the pickups
             </p>
-          </div>
+          </motion.div>
         </div>
-      </div>
-      <div className="vision-footer-hero">
-      <div className="bubble-footer">
-        <img src={Bubble} alt="" />
-        <img src={Bubble} alt="" />
-      </div>
+      </motion.div>
+      <motion.div className="vision-footer-hero"
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={slideUp}
+        transition={{ duration: 0.8, delay: 1.2 }}
+      >
+      <motion.div className="bubble-footer"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { 
+            opacity: 1,
+            transition: { duration: 0.8 }
+          } : {}}
+        >
+        <motion.img 
+            src={Bubble} 
+            alt=""
+            animate={isInView ? {
+              y: [0, -6, 0],
+              transition: {
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.5
+              }
+            } : {}}
+          />
+          <motion.img 
+            src={Bubble} 
+            alt=""
+            animate={isInView ? {
+              y: [0, 6, 0],
+              transition: {
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2.0
+              }
+            } : {}}
+          />
+      </motion.div>
         <h2 className="titile">
           Laundry Management System that <br /> works on any device & from
           anywhere
@@ -96,25 +257,70 @@ const Vision = () => {
           Running a laundry business can be complex. From managing scheduling{" "}
           <br /> pickups, keeping track of inventory, and handling requests
         </p>
-      </div>
-      <div className="vision-footer">
-        <div className="items">
+      </motion.div>
+      <motion.div className="vision-footer"
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={fadeIn}
+        transition={{ duration: 0.8, delay: 1.4 }}
+      >
+        <motion.div className="items" 
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { 
+              opacity: 1, 
+              y: 0,
+              transition: { 
+                duration: 0.6, 
+                delay: 1.6 + 0 * 0.2 
+              }
+            } : {}}
+          >
           <img src={VisionPoints} alt="" />
           <p>Staff can use either Computer, PAD (or) Mobile</p>
-        </div>
-        <div className="items">
+        </motion.div>
+        <motion.div className="items"
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { 
+              opacity: 1, 
+              y: 0,
+              transition: { 
+                duration: 0.6, 
+                delay: 1.6 + 1 * 0.2 
+              }
+            } : {}}
+          >
           <img src={VisionPoints} alt="" />
           <p>Customers use Fabklean app to raise requests</p>
-        </div>
-        <div className="items">
+        </motion.div>
+        <motion.div className="items"
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { 
+              opacity: 1, 
+              y: 0,
+              transition: { 
+                duration: 0.6, 
+                delay: 1.6 + 2 * 0.2 
+              }
+            } : {}}
+          >
           <img src={VisionPoints} alt="" />
           <p>Drivers use pickup & delivery mobile apps</p>
-        </div>
-        <div className="items">
+        </motion.div>
+        <motion.div className="items"
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { 
+              opacity: 1, 
+              y: 0,
+              transition: { 
+                duration: 0.6, 
+                delay: 1.6 + 3 * 0.2 
+              }
+            } : {}}
+          >
           <img src={VisionPoints} alt="" />
           <p>Owners can use Fabklean Business app</p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
