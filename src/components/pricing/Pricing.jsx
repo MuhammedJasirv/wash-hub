@@ -24,12 +24,11 @@ const Pricing = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { 
           opacity: 1, 
-          y: 0,
           transition: { duration: 0.6, delay: 0.2 }
         } : {}}
       >
         <h2>Pricing Plans</h2>
-        <p>Running a laundry business can be complex...</p>
+        <p>Running a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, and handling  requestsRunning a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, and handling  requestsRunning a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, </p>
       </motion.div>
 
       {/* Toggle Switch */}
