@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./LandingPage.scss";
 import logo from "../../assets/images/LOOG 1.png";
@@ -7,6 +7,7 @@ import DashbordLogo from "../../assets/images/logodash.png";
 import Bubble from "../../assets/images/bubbles/One1.png";
 
 const LandingPage = () => {
+  const [isOpen,setIsOpen]=useState(false)
   return (
     <div className="landing-page">
       <div className="container">
@@ -38,10 +39,22 @@ const LandingPage = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7 }}
+            onClick={()=>setIsOpen(!isOpen)}
           >
             <div className="menu-line"></div>
             <div className="menu-line"></div>
             <div className="menu-line"></div>
+            {isOpen&&(
+            <div className="menu">
+          <button className="close-btn" onClick={()=>{setIsOpen(!isOpen)}} >×</button>
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        )}
           </motion.div>
         </motion.header>
 
