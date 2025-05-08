@@ -251,8 +251,8 @@ const Vision = () => {
           anywhere
         </h2>
         <p className="desictiption">
-          Running a laundry business can be complex. From managing scheduling{" "}
-          <br /> pickups, keeping track of inventory, and handling requests
+        Experience convenience like never before. Our system ensures seamless operations on all devices,{" "}
+          <br /> enabling you to manage every aspect of your business from anywhere.
         </p>
       </motion.div>
       <motion.div className="vision-footer"

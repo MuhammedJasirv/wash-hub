@@ -28,7 +28,7 @@ const Pricing = () => {
         } : {}}
       >
         <h2>Pricing Plans</h2>
-        <p>Running a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, and handling  requestsRunning a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, and handling  requestsRunning a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, </p>
+        <p>Managing a laundry business involves more than just washing clothes — it’s about optimizing pickups, tracking inventory, and meeting customer demands efficiently. Our platform simplifies operations through smart scheduling, real-time tracking, and seamless customer communication, helping you focus on what truly matters: delivering quality service. </p>
       </motion.div>
 
       {/* Toggle Switch */}
@@ -58,7 +58,7 @@ const Pricing = () => {
       >
         <p className='price'><span>₹</span>999</p>
         <p className='month'>/month</p>
-        <p className='description'>Running a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, and handling  requestsRunning a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, and handling  requestsRunning a laundry business can be complex. From managing scheduling pickups, keeping track of inventory, </p>
+        <p className='description'>Our affordable plan gives you full access to powerful laundry management tools — including order tracking, inventory control, driver route optimization, and customer notifications. Whether you're running a single outlet or a multi-location setup, streamline every aspect of your business and boost customer satisfaction. </p>
         <motion.div className='points'
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -78,25 +78,25 @@ const Pricing = () => {
                 hidden: { opacity: 0, x: -10 },
                 visible: { opacity: 1, x: 0 }
               }}
-            ><img src={PricePoint} alt="" /> <p>Running a laundry business can be complex. From managing scheduling pickups, </p></motion.div>
+            ><img src={PricePoint} alt="" /> <p>Automated pickup and delivery scheduling to save you time and effort. </p></motion.div>
             <motion.div  className="items"
               variants={{
                 hidden: { opacity: 0, x: -10 },
                 visible: { opacity: 1, x: 0 }
               }}
-            ><img src={PricePoint} alt="" /> <p>Running a laundry business can be complex. From managing scheduling pickups, </p></motion.div>
+            ><img src={PricePoint} alt="" /> <p>Live inventory tracking ensures no item goes missing or unaccounted for. </p></motion.div>
             <motion.div  className="items"
               variants={{
                 hidden: { opacity: 0, x: -10 },
                 visible: { opacity: 1, x: 0 }
               }}
-            ><img src={PricePoint} alt="" /> <p>Running a laundry business can be complex. From managing scheduling pickups, </p></motion.div>
+            ><img src={PricePoint} alt="" /> <p>Real-time notifications keep your customers updated and engaged. </p></motion.div>
             <motion.div  className="items"
               variants={{
                 hidden: { opacity: 0, x: -10 },
                 visible: { opacity: 1, x: 0 }
               }}
-            ><img src={PricePoint} alt="" /> <p>Running a laundry business can be complex. From managing scheduling pickups, </p></motion.div>
+            ><img src={PricePoint} alt="" /> <p>Smart dashboard for performance insights and business growth. </p></motion.div>
         </motion.div>
         <button className="choose-plan-button">Choose Plan</button>
     </motion.div>
