@@ -85,7 +85,7 @@ const About = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             />
-            <h3>Experience and expertise</h3>
+            <h3>Smart Data Management</h3>
           </motion.div>
 
           <motion.div className="feature" variants={itemVariants}>
@@ -95,7 +95,7 @@ const About = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             />
-            <h3>Experience and expertise</h3>
+            <h3>Automated Workflows</h3>
           </motion.div>
 
           <motion.div className="feature" variants={itemVariants}>
@@ -105,50 +105,49 @@ const About = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             />
-            <h3>Experience and expertise</h3>
+            <h3>Actionable Insights</h3>
           </motion.div>
         </motion.div>
       </section>
 
       <section className="about">
-        <motion.div className="about-content" variants={containerVariants}>
-          <motion.h2 variants={itemVariants}>
-            We provide Transforming Visions into Digital Reality
-          </motion.h2>
+  <motion.div className="about-content" variants={containerVariants}>
+    {/* Main Heading and Description */}
+    <motion.h2 variants={itemVariants}>
+      Laundry Made Effortless with Wash Hub
+    </motion.h2>
 
-          <motion.p variants={itemVariants}>
-            Running a laundry business can be complex. From managing orders to
-            scheduling pickups, keeping track of inventory, and handling
-            requests.
-          </motion.p>
+    <motion.p variants={itemVariants}>
+      Whether you're a customer wanting clean clothes at your doorstep or a business owner managing operations—Wash Hub makes laundry smarter and simpler.
+    </motion.p>
 
-          <motion.div className="about-point" variants={itemVariants}>
-            <h3>Provide Transforming Visions into Digital</h3>
-            <p>
-              Running a laundry business can be complex. From managing orders to
-              scheduling pickups, keeping track of inventory.
-            </p>
-          </motion.div>
+    {/* For Customers */}
+    <motion.div className="about-point" variants={itemVariants}>
+      <h3>For Laundry Customers</h3>
+      <p>
+        Schedule pickups in seconds, track your laundry in real time, and enjoy fast doorstep delivery. Laundry day has never been this easy.
+      </p>
+    </motion.div>
 
-          <motion.div className="about-point" variants={itemVariants}>
-            <h3>Provide Transforming Visions into Digital</h3>
-            <p>
-              Running a laundry business can be complex. From managing
-              scheduling pickups, keeping track of inventory, and handling
-              requests.
-            </p>
-          </motion.div>
-        </motion.div>
+    {/* For Business Owners */}
+    <motion.div className="about-point" variants={itemVariants}>
+      <h3>For Laundry Businesses</h3>
+      <p>
+        Manage orders, staff, and machines all from one dashboard. Automate your workflow, streamline operations, and improve customer satisfaction with ease.
+      </p>
+    </motion.div>
+  </motion.div>
 
-        <motion.div
-          className="about-image"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <img src={AboutImg} alt="About LDC Software" />
-        </motion.div>
-      </section>
+  <motion.div
+    className="about-image"
+    initial={{ opacity: 0, x: 50 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8, delay: 0.4 }}
+  >
+    <img src={AboutImg} alt="About LDC Software" />
+  </motion.div>
+</section>
+
     </motion.div>
   );
 };

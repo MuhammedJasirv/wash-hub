@@ -8,6 +8,20 @@ import Bubble from "../../assets/images/bubbles/One1.png";
 
 const LandingPage = () => {
   const [isOpen,setIsOpen]=useState(false)
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, 
+      },
+    },
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
     <div className="landing-page">
       <div className="container">
@@ -45,15 +59,27 @@ const LandingPage = () => {
             <div className="menu-line"></div>
             <div className="menu-line"></div>
             {isOpen&&(
-            <div className="menu">
-          <button className="close-btn" onClick={()=>{setIsOpen(!isOpen)}} >×</button>
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
-          </ul>
-        </div>
+             <motion.div
+             className="menu"
+             initial={{ x: "-100%", opacity: 0 }}
+             animate={{ x: 0, opacity: 1 }}
+             exit={{ x: "-100%", opacity: 0 }}
+             transition={{ duration: 0.4, ease: "easeInOut" }}
+           >
+             <button className="close-btn" onClick={() => setIsOpen(!isOpen)}>×</button>
+   
+             <motion.ul
+               variants={containerVariants}
+               initial="hidden"
+               animate="visible"
+             >
+               {["Home", "About", "Services", "Contact"].map((text, index) => (
+                 <motion.li key={index} variants={itemVariants}>
+                   {text}
+                 </motion.li>
+               ))}
+             </motion.ul>
+           </motion.div>
         )}
           </motion.div>
         </motion.header>
@@ -138,7 +164,7 @@ const LandingPage = () => {
                 whileTap={{ scale: 0.95 }}
                 className="cta-button"
               >
-                Book a Demo
+                Schedule a Pickup
               </motion.button>
             </motion.div>
 

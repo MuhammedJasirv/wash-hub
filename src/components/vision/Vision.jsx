@@ -86,8 +86,8 @@ const Vision = () => {
           Visions into  All the Digital Reality
         </h2>
         <p className="desictiption">
-          Running a laundry business can be complex. From managing scheduling{" "}
-          <br /> pickups, keeping track of inventory, and handling requests
+        Managing a laundry business involves countless tasks. Simplify operations, streamline workflows, and improve {" "}
+          <br /> efficiency all while providing excellent customer service with our all-in-one platform
         </p>
       </motion.div>
       <motion.div  className="vision-contents"
@@ -128,20 +128,18 @@ const Vision = () => {
               transition: { duration: 0.8, delay: 1.0 }
             } : {}}
             >
-            <h2>provide Transforming</h2>
-            <p>
-              Running a laundry business can be complex. From managing orders to
-              scheduling all the pickups, keeping track of inventory, and the
-              handling requests all the best of the theamRunning a laundry
-              business can be complex. From managing orders to scheduling all
-              the pickups, keeping track of inventory, and the handling requests
-              all the best of the theamRunning a laundry business can be
-              complex. From managing orders to scheduling all the pickups,
-              keeping track of inventory, and the handling requests all the best
-              of the theamRunning a laundry business can be complex. From
-              managing orders to scheduling all the pickups, keeping track of
-              inventory, and the handling requests all the best of the theam
-            </p>
+            <h2>Transforming Laundry Management</h2>
+  <p>
+    Running a laundry business can be complex. From managing orders to
+    scheduling all the pickups, keeping track of inventory, and handling requests—our platform makes it all seamless. 
+    With smart solutions and digital tools, you’ll be able to streamline operations and boost productivity.
+  </p>
+  <p>
+    Whether it’s real-time tracking or automated pickup scheduling, we bring everything together in a single, user-friendly platform.
+  </p>
+  <p>
+    Join us as we revolutionize the way you handle your laundry business, bringing technology and efficiency right at your fingertips.
+  </p>
           </motion.div>
         </div>
         <div className="right">
@@ -153,7 +151,7 @@ const Vision = () => {
             } : {}}
             >
             <div className="hero">
-              <h2> provide Transforming </h2>
+              <h2> Effortless Order Management </h2>
               <motion.img 
                 src={MessageIcon} 
                 alt=""
@@ -169,12 +167,12 @@ const Vision = () => {
               />
             </div>
             <p>
-              Running a laundry business can be complex. From managing orders to
-              scheduling all the pickups, keeping track of inventory, and the
-              handling requests all the best of the theamRunning a laundry
-              business can be complex. From managing orders to scheduling all
-              the pickups
-            </p>
+      Running a laundry business can be complex. From managing orders to
+      scheduling all the pickups, keeping track of inventory, and handling requests—our platform simplifies everything.
+    </p>
+    <p>
+      Efficient order management ensures that all your tasks are automated, and you stay in control at all times.
+    </p>
           </motion.div>
           <motion.div className="down"
             initial={{ opacity: 0 }}
@@ -184,7 +182,7 @@ const Vision = () => {
             } : {}}
           >
             <div className="hero">
-              <h2> provide Transforming </h2>
+              <h2> Smart Inventory Tracking </h2>
               <motion.img 
                 src={BoxIcon} 
                 alt=""
@@ -200,12 +198,11 @@ const Vision = () => {
               />
             </div>
             <p>
-              Running a laundry business can be complex. From managing orders to
-              scheduling all the pickups, keeping track of inventory, and the
-              handling requests all the best of the theamRunning a laundry
-              business can be complex. From managing orders to scheduling all
-              the pickups
-            </p>
+      Keeping track of inventory can be time-consuming. With our tool, you’ll have real-time access to stock levels, upcoming deliveries, and better management of laundry items.
+    </p>
+    <p>
+      Our platform provides insights on when to reorder and keeps everything in stock, making your operations run smoothly.
+    </p>
           </motion.div>
         </div>
       </motion.div>

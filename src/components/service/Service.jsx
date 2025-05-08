@@ -101,8 +101,9 @@ const Service = () => {
           variants={slideUp}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <Card />
-          <Card />
+          <Card  icon={ iconData}
+    title= "Automated Pickup Scheduling" description= "Enable customers to schedule pickups with ease through an automated interface. Improve scheduling efficiency while ensuring a smooth and timely customer experience."/>
+    <Card  icon=  {iconData} title="Performance Analytics" description= "Analyze business performance with real-time reports. Track revenue, orders, and staff productivity, making data-driven decisions to drive continuous growth and improvement."/>
         </motion.div>
 
         <motion.div
@@ -113,7 +114,7 @@ const Service = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <div>
-            <Card />
+            <Card icon= {iconData} title= "Customer Communication" description="Automate updates, alerts, and promotions via SMS or email. Keep your customers informed and engaged through seamless communication directly from your dashboard."/>
           </div>
         </motion.div>
 
@@ -124,8 +125,9 @@ const Service = () => {
           variants={slideUp}
           transition={{ duration: 0.6, delay: 1.0 }}
         >
-          <Card />
-          <Card />
+          <Card icon={iconData} title="Invoice Management & Payment Tracking" description="Generate invoices automatically, manage payments, and track finances all in one place. Reduce administrative workload while ensuring precise, accurate, and timely billing every time." />
+          <Card  icon={iconData} title="Inventory Management" description="Track inventory from check-in to delivery with our smart management system. Reduce errors and optimize tracking, ensuring accurate order fulfillment and fast service."/>
+
         </motion.div>
       </div>
 
@@ -166,7 +168,7 @@ const Service = () => {
 
 export default Service;
 
-const Card = () => {
+const Card = ({ icon, title, description }) => {
   return (
     <motion.div
       className="transform-card"
@@ -176,14 +178,10 @@ const Card = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="transform-icon">
-        <img src={iconData} alt="" />
+        <img src={icon} alt={title} />
       </div>
-      <h3 className="transform-title">provide Transforming</h3>
-      <p className="transform-description">
-        Running a laundry business can be complex. From managing orders to
-        scheduling all the pickups, keeping track of inventory, and the handling
-        requests all the best of the theam
-      </p>
+      <h3 className="transform-title">{title}</h3>
+      <p className="transform-description">{description}</p>
     </motion.div>
   );
 };
