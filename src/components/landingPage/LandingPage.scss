@@ -307,12 +307,12 @@
 
         h3 {
           font-size: 25px;
+          font-weight: 800;
           background: $gradient-idc;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           color: transparent;
-          font-weight: 400;
           line-height: 24px;
           @media (max-width: 992px) {
             font-size: 22px;

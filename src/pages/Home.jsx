@@ -12,7 +12,6 @@ const Home = () => {
   return (
     <div>
         <LandingPage/>
-        {/* <FooterLandingPage/> */}
         <About/>
         <Service/>
         <Vision/>

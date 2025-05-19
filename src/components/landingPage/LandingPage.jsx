@@ -7,105 +7,108 @@ import DashbordLogo from "../../assets/images/logodash.png";
 import Bubble from "../../assets/images/bubbles/One1.png";
 
 const LandingPage = () => {
-  const [isOpen,setIsOpen]=useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, 
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
       },
     },
   };
-  
+
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
   return (
-    <div className="landing-page">
+    <motion.div
+      className="landing-page"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -30 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="container">
         {/* Header Section */}
         <motion.header
           className="header"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
         >
           <motion.img
             className="logo"
             src={logo}
             alt="LDC Software Logo"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
+            variants={itemVariants}
           />
-          <motion.h1
-            className="header-title"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-          >
+          <motion.h1 className="header-title" variants={itemVariants}>
             Laundry Made Simple and Swift
           </motion.h1>
           <motion.div
             className="menu-icon"
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.7 }}
-            onClick={()=>setIsOpen(!isOpen)}
+            onClick={() => setIsOpen(!isOpen)}
+            variants={itemVariants}
           >
             <div className="menu-line"></div>
             <div className="menu-line"></div>
             <div className="menu-line"></div>
-            {isOpen&&(
-             <motion.div
-             className="menu"
-             initial={{ x: "-100%", opacity: 0 }}
-             animate={{ x: 0, opacity: 1 }}
-             exit={{ x: "-100%", opacity: 0 }}
-             transition={{ duration: 0.4, ease: "easeInOut" }}
-           >
-             <button className="close-btn" onClick={() => setIsOpen(!isOpen)}>×</button>
-   
-             <motion.ul
-               variants={containerVariants}
-               initial="hidden"
-               animate="visible"
-             >
-               {["Home", "About", "Services", "Contact"].map((text, index) => (
-                 <motion.li key={index} variants={itemVariants}>
-                   {text}
-                 </motion.li>
-               ))}
-             </motion.ul>
-           </motion.div>
-        )}
+            {isOpen && (
+              <motion.div
+                className="menu"
+                initial={{ x: "-100%", opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: "-100%", opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <button className="close-btn" onClick={() => setIsOpen(!isOpen)}>
+                  ×
+                </button>
+                <motion.ul variants={containerVariants} initial="hidden" animate="visible">
+                  {["Home", "About", "Services", "Contact"].map((text, index) => (
+                    <motion.li key={index} variants={itemVariants}>
+                      {text}
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.div>
+            )}
           </motion.div>
         </motion.header>
 
         {/* Hero Section */}
         <section className="hero">
           <div className="hero-left">
+            {/* Floating Bubble */}
             <motion.div
               className="bubble"
-              animate={{ y: [0, -10, 0] }} // up and back down
+              animate={{
+                y: [0, 30, 0, 30, 0],
+                rotate: [0, 9, 0, -8, 0],
+                scale: [1, 1.2, 1],
+              }}
               transition={{
-                duration: 52,
+                duration: 12,
                 repeat: Infinity,
                 repeatType: "loop",
                 ease: "easeInOut",
               }}
-              whileHover={{ scale: 1.1, rotate: 8 }}
+              whileHover={{ scale: 1.3, rotate: 20 }}
             >
               <img src={Bubble} alt="bubble" />
             </motion.div>
 
+            {/* Hero Content */}
             <motion.div
               className="hero-content"
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ type: "spring", stiffness: 50 }}
+              transition={{ type: "spring", stiffness: 60 }}
             >
               <h2>
                 Effortless Laundry Management with{" "}
@@ -121,46 +124,33 @@ const LandingPage = () => {
                 <motion.img
                   src={Bubble}
                   alt="bubble last"
-                  // Floating animation (gentle up/down sway)
                   animate={{
-                    y: [0, -15, 0, 15, 0],
-                    scale: [1, 1.05, 1, 0.98, 1],
-                    rotate: [0, 2, 0, -2, 0],
+                    y: [0, -25, 0, 25, 0],
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 5, 0, -5, 0],
                   }}
                   transition={{
-                    duration: 8,
+                    duration: 6,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  // Drag interaction (follows mouse direction)
                   drag
                   dragConstraints={{
-                    top: -30,
-                    left: -30,
-                    right: 30,
-                    bottom: 30,
+                    top: -50,
+                    left: -50,
+                    right: 50,
+                    bottom: 50,
                   }}
-                  dragElastic={0.3}
-                  whileDrag={{
-                    scale: 1.2,
-                    transition: { type: "spring", damping: 10 },
-                  }}
-                  // Hover effects
-                  whileHover={{
-                    scale: 1.1,
-                    transition: { duration: 0.3 },
-                  }}
-                  // Subtle pulse effect
-                  whileTap={{
-                    scale: 0.95,
-                    opacity: 0.8,
-                  }}
+                  dragElastic={0.4}
+                  whileDrag={{ scale: 1.3 }}
+                  whileHover={{ scale: 1.2, rotate: 8 }}
+                  whileTap={{ scale: 0.95, opacity: 0.8 }}
                 />
               </div>
 
               <h3>Request for Demo 1028 101 3030</h3>
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="cta-button"
               >
@@ -168,24 +158,20 @@ const LandingPage = () => {
               </motion.button>
             </motion.div>
 
+            {/* Floating Bubbles */}
             <div className="bubble-three">
               <motion.img
                 src={Bubble}
                 alt="bubble"
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1.3, rotate: 10 }}
                 drag
-                dragConstraints={{
-                  top: -50,
-                  left: -50,
-                  right: 50,
-                  bottom: 50,
-                }}
-                whileDrag={{ scale: 1.1 }}
-                dragElastic={0.2}
+                dragConstraints={{ top: -60, left: -60, right: 60, bottom: 60 }}
+                whileDrag={{ scale: 1.2 }}
+                dragElastic={0.3}
                 animate={{
-                  x: [0, 10, 0, -10, 0],
-                  y: [0, -15, 0, 15, 0],
-                  rotate: [0, 5, 0, -5, 0],
+                  x: [0, 20, 0, -20, 0],
+                  y: [0, -25, 0, 25, 0],
+                  rotate: [0, 10, 0, -10, 0],
                 }}
                 transition={{
                   duration: 5,
@@ -197,20 +183,15 @@ const LandingPage = () => {
               <motion.img
                 src={Bubble}
                 alt="bubble"
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1.3, rotate: -10 }}
                 drag
-                dragConstraints={{
-                  top: -50,
-                  left: -50,
-                  right: 50,
-                  bottom: 50,
-                }}
-                whileDrag={{ scale: 1.1 }}
-                dragElastic={0.2}
+                dragConstraints={{ top: -60, left: -60, right: 60, bottom: 60 }}
+                whileDrag={{ scale: 1.2 }}
+                dragElastic={0.3}
                 animate={{
-                  x: [0, -15, 0, 15, 0],
-                  y: [0, 10, 0, -10, 0],
-                  rotate: [0, -5, 0, 5, 0],
+                  x: [0, -25, 0, 25, 0],
+                  y: [0, 20, 0, -20, 0],
+                  rotate: [0, -10, 0, 10, 0],
                 }}
                 transition={{
                   duration: 6,
@@ -222,7 +203,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* Right Side: Images and Dashboard */}
+          {/* Right Section */}
           <motion.div
             className="hero-image"
             initial={{ opacity: 0, x: 100 }}
@@ -230,21 +211,11 @@ const LandingPage = () => {
             transition={{ duration: 1 }}
           >
             <div className="hero-images">
-              <img
-                className="hero-imageone"
-                src={Maskgroup}
-                alt="Illustration Left"
-              />
-              <img
-                className="hero-imagetwo"
-                src={Maskgroup}
-                alt="Illustration Right"
-              />
+              <img className="hero-imageone" src={Maskgroup} alt="Illustration Left" />
+              <img className="hero-imagetwo" src={Maskgroup} alt="Illustration Right" />
             </div>
 
-            {/* Graph Section */}
             <div className="dashboard-container">
-              {/* Sidebar */}
               <div className="sidebar">
                 <div className="logodash">
                   <img src={DashbordLogo} alt="Dashboard Logo" />
@@ -254,7 +225,6 @@ const LandingPage = () => {
                 ))}
               </div>
 
-              {/* Main Content */}
               <div className="main-content">
                 <div className="header-cards">
                   {[...Array(4)].map((_, index) => (
@@ -263,7 +233,6 @@ const LandingPage = () => {
                 </div>
 
                 <div className="main-body">
-                  {/* Left Column */}
                   <div className="left-section">
                     <div className="graph"></div>
                     <div className="donut-section">
@@ -276,7 +245,6 @@ const LandingPage = () => {
                     </div>
                   </div>
 
-                  {/* Right Column Cards */}
                   <div className="right-section">
                     {[...Array(4)].map((_, index) => (
                       <div className="right-card" key={index}></div>
@@ -288,7 +256,7 @@ const LandingPage = () => {
           </motion.div>
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
