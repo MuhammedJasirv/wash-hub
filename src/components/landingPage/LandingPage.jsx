@@ -5,10 +5,11 @@ import logo from "../../assets/images/LOOG 1.png";
 import Maskgroup from "../../assets/images/Mask group.png";
 import DashbordLogo from "../../assets/images/logodash.png";
 import Bubble from "../../assets/images/bubbles/One1.png";
+import NavBar from "../navBar/NavBar";
 
 const LandingPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [widthScreen, setWidthScreen] = useState("100%");
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,60 +28,74 @@ const LandingPage = () => {
 
   return (
     <motion.div
-      className="landing-page"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -30 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
+  className="landing-page"
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ 
+    opacity: 1, 
+    y: 0, 
+    width: widthScreen 
+  }}
+  exit={{ opacity: 0, y: -30 }}
+  transition={{
+    duration: 0.8,
+    ease: "easeOut",
+    width: { duration: 0.6, ease: "easeInOut" },
+    opacity: { duration: 0.5 },
+  }}
+>
       <div className="container">
         {/* Header Section */}
-        <motion.header
-          className="header"
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-        >
-          <motion.img
-            className="logo"
-            src={logo}
-            alt="LDC Software Logo"
-            variants={itemVariants}
-          />
-          <motion.h1 className="header-title" variants={itemVariants}>
-            Laundry Made Simple and Swift
-          </motion.h1>
-          <motion.div
-            className="menu-icon"
-            onClick={() => setIsOpen(!isOpen)}
-            variants={itemVariants}
+        {/* <motion.header
+            className="header"
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
           >
-            <div className="menu-line"></div>
-            <div className="menu-line"></div>
-            <div className="menu-line"></div>
-            {isOpen && (
-              <motion.div
-                className="menu"
-                initial={{ x: "-100%", opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: "-100%", opacity: 0 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-              >
-                <button className="close-btn" onClick={() => setIsOpen(!isOpen)}>
-                  ×
-                </button>
-                <motion.ul variants={containerVariants} initial="hidden" animate="visible">
-                  {["Home", "About", "Services", "Contact"].map((text, index) => (
-                    <motion.li key={index} variants={itemVariants}>
-                      {text}
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              </motion.div>
-            )}
-          </motion.div>
-        </motion.header>
-
+            <motion.img
+              className="logo"
+              src={logo}
+              alt="LDC Software Logo"
+              variants={itemVariants}
+            />
+            <motion.h1 className="header-title" variants={itemVariants}>
+              Laundry Made Simple and Swift
+            </motion.h1>
+            <motion.div
+              className="menu-icon"
+              onClick={() => setIsOpen(!isOpen)}
+              variants={itemVariants}
+            >
+              <div className="menu-line"></div>
+              <div className="menu-line"></div>
+              <div className="menu-line"></div>
+              {isOpen && (
+                <motion.div
+                  className="menu"
+                  initial={{ x: "-100%", opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: "-100%", opacity: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                >
+                  <button className="close-btn" onClick={() => setIsOpen(!isOpen)}>
+                    ×
+                  </button>
+                  <motion.ul variants={containerVariants} initial="hidden" animate="visible">
+                    {["Home", "About", "Services", "Contact"].map((text, index) => (
+                      <motion.li key={index} variants={itemVariants}>
+                        {text}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </motion.div>
+              )}
+            </motion.div>
+          </motion.header> */}
+        <NavBar
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          setWidthScreen={setWidthScreen}
+          widthScreen={widthScreen}
+        />
         {/* Hero Section */}
         <section className="hero">
           <div className="hero-left">
@@ -211,8 +226,16 @@ const LandingPage = () => {
             transition={{ duration: 1 }}
           >
             <div className="hero-images">
-              <img className="hero-imageone" src={Maskgroup} alt="Illustration Left" />
-              <img className="hero-imagetwo" src={Maskgroup} alt="Illustration Right" />
+              <img
+                className="hero-imageone"
+                src={Maskgroup}
+                alt="Illustration Left"
+              />
+              <img
+                className="hero-imagetwo"
+                src={Maskgroup}
+                alt="Illustration Right"
+              />
             </div>
 
             <div className="dashboard-container">
