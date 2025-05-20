@@ -101,6 +101,7 @@ const NavBar = ({ isOpen, setIsOpen, setWidthScreen, widthScreen }) => {
             exit={{ x: 300, opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
+            <button className="mobile-close-btn" onClick={handleChange}>✕</button>
             <div className="logosidebar">
               <motion.img
                 src={logo}
