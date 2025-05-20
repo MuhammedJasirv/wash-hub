@@ -19,7 +19,7 @@ const NavBar = () => {
         visible: { opacity: 1, y: 0 },
       };
   return (
-    <div>
+    <div className="container">
         <motion.header
                   className="header"
                   initial={{ opacity: 0, y: -50 }}
