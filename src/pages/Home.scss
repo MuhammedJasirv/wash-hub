@@ -1,0 +1,29 @@
+.home-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.home-hero {
+  background-image: url('../assets/images/desing/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 0 1rem;
+
+  @media (min-width: 576px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+
+  @media (min-width: 992px) {
+    padding: 0 3rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 0 5rem;
+  }
+}
+
