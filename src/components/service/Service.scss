@@ -3,7 +3,6 @@
 .service {
   background-color: #000212;
   position: relative;
-  top: -60px;
   overflow: hidden;
   padding-bottom: 80px;
 
@@ -192,11 +191,11 @@
     }
   }
 
-  .bubble {
+  .bubble-service {
     img:nth-child(1) {
       position: absolute;
       width: 76px;
-      top: 18%;
+      top: 12%;
       left: 14%;
 
       @media (max-width: 1400px) {
@@ -246,7 +245,7 @@
     }
   }
 
-  .bubble-last {
+  .bubble-last-service{
     img {
       position: absolute;
       width: 76px;

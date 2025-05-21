@@ -34,7 +34,7 @@ const Service = () => {
       </motion.div>
 
       <motion.div
-        className="bubble" // Keep your existing CSS classes
+        className="bubble-service" // Keep your existing CSS classes
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
@@ -132,7 +132,7 @@ const Service = () => {
       </div>
 
       <motion.div
-        className="bubble-last"
+        className="bubble-last-service"
         initial="hidden"
         animate={isInView ? ["visible", "float"] : "hidden"}
         variants={{

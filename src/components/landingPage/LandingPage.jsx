@@ -6,6 +6,8 @@ import Maskgroup from "../../assets/images/Mask group.png";
 import DashbordLogo from "../../assets/images/logodash.png";
 import Bubble from "../../assets/images/bubbles/One1.png";
 import NavBar from "../navBar/NavBar";
+import Content from "../content/Content";
+import Dashboard from "../dashboard/Dashboard";
 
 const LandingPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,52 +46,6 @@ const LandingPage = () => {
   }}
 >
       <div className="container">
-        {/* Header Section */}
-        {/* <motion.header
-            className="header"
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-          >
-            <motion.img
-              className="logo"
-              src={logo}
-              alt="LDC Software Logo"
-              variants={itemVariants}
-            />
-            <motion.h1 className="header-title" variants={itemVariants}>
-              Laundry Made Simple and Swift
-            </motion.h1>
-            <motion.div
-              className="menu-icon"
-              onClick={() => setIsOpen(!isOpen)}
-              variants={itemVariants}
-            >
-              <div className="menu-line"></div>
-              <div className="menu-line"></div>
-              <div className="menu-line"></div>
-              {isOpen && (
-                <motion.div
-                  className="menu"
-                  initial={{ x: "-100%", opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: "-100%", opacity: 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                >
-                  <button className="close-btn" onClick={() => setIsOpen(!isOpen)}>
-                    ×
-                  </button>
-                  <motion.ul variants={containerVariants} initial="hidden" animate="visible">
-                    {["Home", "About", "Services", "Contact"].map((text, index) => (
-                      <motion.li key={index} variants={itemVariants}>
-                        {text}
-                      </motion.li>
-                    ))}
-                  </motion.ul>
-                </motion.div>
-              )}
-            </motion.div>
-          </motion.header> */}
         <NavBar
           isOpen={isOpen}
           setIsOpen={setIsOpen}
@@ -125,16 +81,7 @@ const LandingPage = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ type: "spring", stiffness: 60 }}
             >
-              <h2>
-                Effortless Laundry Management with{" "}
-                <span className="highlight">LDC Software</span>
-              </h2>
-              <p>
-                Running a laundry business can be complex. From managing orders
-                to scheduling pickups, keeping track of inventory, and handling
-                customer requests.
-              </p>
-
+              <Content/>
               <div className="bubble-last">
                 <motion.img
                   src={Bubble}
@@ -162,15 +109,6 @@ const LandingPage = () => {
                   whileTap={{ scale: 0.95, opacity: 0.8 }}
                 />
               </div>
-
-              <h3>Request for Demo 1028 101 3030</h3>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="cta-button"
-              >
-                Schedule a Pickup
-              </motion.button>
             </motion.div>
 
             {/* Floating Bubbles */}
@@ -217,66 +155,7 @@ const LandingPage = () => {
               />
             </div>
           </div>
-
-          {/* Right Section */}
-          <motion.div
-            className="hero-image"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <div className="hero-images">
-              <img
-                className="hero-imageone"
-                src={Maskgroup}
-                alt="Illustration Left"
-              />
-              <img
-                className="hero-imagetwo"
-                src={Maskgroup}
-                alt="Illustration Right"
-              />
-            </div>
-
-            <div className="dashboard-container">
-              <div className="sidebar">
-                <div className="logodash">
-                  <img src={DashbordLogo} alt="Dashboard Logo" />
-                </div>
-                {[...Array(6)].map((_, index) => (
-                  <div className="menu-item" key={index}></div>
-                ))}
-              </div>
-
-              <div className="main-content">
-                <div className="header-cards">
-                  {[...Array(4)].map((_, index) => (
-                    <div className="header-card" key={index}></div>
-                  ))}
-                </div>
-
-                <div className="main-body">
-                  <div className="left-section">
-                    <div className="graph"></div>
-                    <div className="donut-section">
-                      <div className="donut-placeholder"></div>
-                      <div className="donut-info">
-                        {[...Array(3)].map((_, index) => (
-                          <div className="donut-line" key={index}></div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="right-section">
-                    {[...Array(4)].map((_, index) => (
-                      <div className="right-card" key={index}></div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <Dashboard/>
         </section>
       </div>
     </motion.div>

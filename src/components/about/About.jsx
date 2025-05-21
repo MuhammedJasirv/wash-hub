@@ -64,52 +64,6 @@ const About = () => {
       animate={controls}
       variants={containerVariants}
     >
-      <section className="features">
-        <motion.div
-          className="bubble"
-          variants={bubbleVariants}
-          animate="float"
-          whileHover="hover"
-          drag
-          dragConstraints={{ top: -20, left: -20, right: 20, bottom: 20 }}
-          dragElastic={0.2}
-        >
-          <img src={Bubble} alt="Decorative bubble" />
-        </motion.div>
-
-        <motion.div className="features-center" variants={containerVariants}>
-          <motion.div className="feature" variants={itemVariants}>
-            <motion.img
-              src={dataImg}
-              alt="Icon"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            />
-            <h3>Smart Data Management</h3>
-          </motion.div>
-
-          <motion.div className="feature" variants={itemVariants}>
-            <motion.img
-              src={VerifcationImg}
-              alt="Icon"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            />
-            <h3>Automated Workflows</h3>
-          </motion.div>
-
-          <motion.div className="feature" variants={itemVariants}>
-            <motion.img
-              src={dataImg}
-              alt="Icon"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            />
-            <h3>Actionable Insights</h3>
-          </motion.div>
-        </motion.div>
-      </section>
-
       <section className="about">
   <motion.div className="about-content" variants={containerVariants}>
     {/* Main Heading and Description */}

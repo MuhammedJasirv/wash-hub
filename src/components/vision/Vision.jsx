@@ -40,7 +40,7 @@ const Vision = () => {
         <img src={RigthBuble} alt="" />
       </div>
       <motion.div 
-        className="bubble"
+        className="vision-bubble"
         initial={{ opacity: 0 }}
         animate={isInView ? { 
           opacity: 1,

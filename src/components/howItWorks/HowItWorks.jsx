@@ -38,7 +38,7 @@ const HowItWorks = () => {
       </div>
       {/* Floating Bubbles */}
       <motion.div
-        className="bubble"
+        className="howitwork-bubble"
         initial={{ opacity: 0 }}
         animate={
           isInView

@@ -188,7 +188,7 @@ const LandingHome = () => {
             </motion.div>
           </section>
         </div>
-        <div class="dashboard">
+        <div class="dashboard" style={{position:'absolute'}}>
           <Dashboard />
         </div>
       </div>
