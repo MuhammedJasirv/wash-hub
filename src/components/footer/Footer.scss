@@ -7,21 +7,22 @@
   .sections {
     display: flex;
     justify-content: space-between;
-    padding: 3.3rem;
-    flex-wrap: wrap; // Allow sections to wrap on smaller screens
+    padding-inline: 3.3rem;
+    padding-block: 1rem;
+    flex-wrap: wrap;
 
     .first-section {
       display: flex;
       flex-direction: column;
       gap: 50px;
-      
+
       img {
         width: 105px;
         height: 105px;
       }
-      
+
       p {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
 
@@ -29,15 +30,17 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      
+
       p {
-        font-size: 20px;
+        font-size: 18px;
       }
-      img{
+
+      img {
         max-width: 105px;
         visibility: hidden;
-        @media (max-width:992px) {
-            display: none;
+
+        @media (max-width: 992px) {
+          display: none;
         }
       }
     }
@@ -47,9 +50,9 @@
       flex-direction: column;
       justify-content: end;
       gap: 50px;
-      
+
       p {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
 
@@ -58,16 +61,16 @@
       flex-direction: column;
       justify-content: end;
       align-items: end;
-      
+
       p:nth-child(1) {
         font-weight: 500;
-        font-size: 21px;
+        font-size: 19px;
         padding: 5px 10px;
         background: $gradient;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         position: relative;
-        
+
         &::before {
           content: "";
           position: absolute;
@@ -75,7 +78,7 @@
           border-radius: 10px;
           padding: 2px;
           background: $gradient;
-          -webkit-mask: 
+          -webkit-mask:
             linear-gradient(#fff 0 0) content-box,
             linear-gradient(#fff 0 0);
           -webkit-mask-composite: xor;
@@ -83,9 +86,9 @@
           z-index: 0;
         }
       }
-      
+
       p:nth-child(2) {
-        font-size: 24px;
+        font-size: 20px;
       }
     }
   }
@@ -96,8 +99,8 @@
     position: relative;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; // Allow content to wrap on smaller screens
-    
+    flex-wrap: wrap;
+
     &::before {
       content: '';
       position: absolute;
@@ -109,18 +112,18 @@
       z-index: 1;
       pointer-events: none;
     }
-    
+
     p {
-      font-size: 20px;
+      font-size: 18px;
     }
-    
+
     .social-media {
       display: flex;
       align-items: center;
       gap: 15px;
-      
+
       p {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }
@@ -132,7 +135,7 @@
     .sections {
       gap: 40px;
       padding: 2.5rem;
-      
+
       .first-section,
       .secount-section,
       .thrird-section,
@@ -140,7 +143,7 @@
         gap: 40px;
       }
     }
-    
+
     .footer-section {
       padding: 2.5rem;
     }
@@ -151,38 +154,38 @@
   .footer {
     .sections {
       padding: 2rem;
-      
+
       .first-section,
       .secount-section,
       .thrird-section,
       .last-section {
         gap: 30px;
-        
+
         p {
+          font-size: 16px;
+        }
+      }
+
+      .last-section {
+        p:nth-child(1) {
+          font-size: 17px;
+        }
+
+        p:nth-child(2) {
           font-size: 18px;
         }
       }
-      
-      .last-section {
-        p:nth-child(1) {
-          font-size: 19px;
-        }
-        
-        p:nth-child(2) {
-          font-size: 22px;
-        }
-      }
     }
-    
+
     .footer-section {
       padding: 2rem;
-      
+
       p {
-        font-size: 18px;
+        font-size: 16px;
       }
-      
+
       .social-media p {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }
@@ -194,26 +197,26 @@
       flex-direction: column;
       gap: 50px;
       padding: 1.5rem;
-      
+
       .first-section,
       .secount-section,
       .thrird-section {
         align-items: center;
         text-align: center;
       }
-      
+
       .last-section {
         align-items: center;
         text-align: center;
       }
     }
-    
+
     .footer-section {
       flex-direction: column;
       gap: 20px;
       padding: 1.5rem;
       text-align: center;
-      
+
       .social-media {
         justify-content: center;
       }
@@ -226,48 +229,48 @@
     .sections {
       padding: 1rem;
       gap: 40px;
-      
+
       .first-section,
       .secount-section,
       .thrird-section,
       .last-section {
         gap: 20px;
-        
+
         p {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
-      
+
       .first-section {
         img {
           width: 80px;
           height: 80px;
         }
       }
-      
+
       .last-section {
         p:nth-child(1) {
-          font-size: 17px;
+          font-size: 15px;
         }
-        
+
         p:nth-child(2) {
-          font-size: 20px;
+          font-size: 17px;
         }
       }
     }
-    
+
     .footer-section {
       padding: 1rem;
-      
+
       p {
-        font-size: 16px;
+        font-size: 14px;
       }
-      
+
       .social-media {
         gap: 10px;
-        
+
         p {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }
