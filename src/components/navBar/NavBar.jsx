@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import logo from "../../assets/images/LOOG 1.png";
+import logo from "../../assets/images/LOOG 2.png";
 import FaceBook from "../../assets/images/FaceBook.png";
 import Instagram from "../../assets/images/Insatgram.png";
 import LinkedIn from "../../assets/images/LinkedIn.png";
