@@ -5,6 +5,7 @@ import FaceBook from "../../assets/images/FaceBook.png";
 import Instagram from "../../assets/images/Insatgram.png";
 import LinkedIn from "../../assets/images/LinkedIn.png";
 import "./NavBar.scss";
+import { Link } from "react-scroll";
 
 const NavBar = ({ isOpen, setIsOpen, setWidthScreen, widthScreen }) => {
   const containerVariants = {
@@ -13,7 +14,7 @@ const NavBar = ({ isOpen, setIsOpen, setWidthScreen, widthScreen }) => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-      },
+      }, 
     },
   };
 
@@ -101,7 +102,9 @@ const NavBar = ({ isOpen, setIsOpen, setWidthScreen, widthScreen }) => {
             exit={{ x: 300, opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-            <button className="mobile-close-btn" onClick={handleChange}>✕</button>
+            <button className="mobile-close-btn" onClick={handleChange}>
+              ✕
+            </button>
             <div className="logosidebar">
               <motion.img
                 src={logo}
@@ -119,7 +122,19 @@ const NavBar = ({ isOpen, setIsOpen, setWidthScreen, widthScreen }) => {
             >
               {["Home", "About", "Services", "Contact"].map((text, index) => (
                 <motion.li key={index} variants={itemVariants}>
-                  {text}
+                  <Link
+                    to={text.toLowerCase()}
+                    smooth={true}
+                    duration={600}
+                    offset={-50} // adjust for fixed navbar
+                    style={{
+                      color: "white",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {text}
+                  </Link>
                 </motion.li>
               ))}
             </motion.ul>

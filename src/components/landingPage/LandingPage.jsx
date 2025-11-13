@@ -87,6 +87,7 @@ const LandingPage = () => {
                   src={Bubble}
                   alt="bubble last"
                   animate={{
+                    x: [0, 0, -100, -100, 0],
                     y: [0, -25, 0, 25, 0],
                     scale: [1, 1.1, 1],
                     rotate: [0, 5, 0, -5, 0],

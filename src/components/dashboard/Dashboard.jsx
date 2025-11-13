@@ -1,11 +1,12 @@
 import React from "react";
 import "./Dashboard.scss";
 import DashbordLogo from "../../assets/images/logodash.png";
+import DashBord from "../../assets/images/landing/iu.png";
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
       {/* Sidebar */}
-      <div className="sidebar">
+      {/* <div className="sidebar">
         <div className="logodash">
           <img src={DashbordLogo} alt="Dashboard Logo" />
         </div>
@@ -14,7 +15,7 @@ const Dashboard = () => {
         ))}
       </div>
 
-      {/* Main Content */}
+
       <div className="main-content">
         <div className="header-cards">
           {[...Array(4)].map((_, index) => (
@@ -23,7 +24,7 @@ const Dashboard = () => {
         </div>
 
         <div className="main-body">
-          {/* Left Column */}
+
           <div className="left-section">
             <div className="graph"></div>
             <div className="donut-section">
@@ -36,14 +37,14 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Right Column Cards */}
           <div className="right-section">
             {[...Array(4)].map((_, index) => (
               <div className="right-card" key={index}></div>
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
+      <img src={DashBord} alt="" />
     </div>
   );
 };

@@ -68,24 +68,10 @@ const About = () => {
   <motion.div className="about-content" variants={containerVariants}>
     {/* Main Heading and Description */}
     <motion.h2 variants={itemVariants}>
-      Laundry Made Effortless with Wash Hub
+      Smart Laundry Management Made Simple with LaundryAce
     </motion.h2>
-
-    <motion.p variants={itemVariants}>
-      Whether you're a customer wanting clean clothes at your doorstep or a business owner managing operations—Wash Hub makes laundry smarter and simpler.
-    </motion.p>
-
-    {/* For Customers */}
-    <motion.div className="about-point" variants={itemVariants}>
-      <h3>For Laundry Customers</h3>
-      <p>
-        Schedule pickups in seconds, track your laundry in real time, and enjoy fast doorstep delivery. Laundry day has never been this easy.
-      </p>
-    </motion.div>
-
     {/* For Business Owners */}
     <motion.div className="about-point" variants={itemVariants}>
-      <h3>For Laundry Businesses</h3>
       <p>
         Manage orders, staff, and machines all from one dashboard. Automate your workflow, streamline operations, and improve customer satisfaction with ease.
       </p>

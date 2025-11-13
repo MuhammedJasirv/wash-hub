@@ -7,6 +7,7 @@ import VisionPoints from "../../assets/images/visionpoints.png";
 import LeftBuble from "../../assets/images/desing/leftBubules.png";
 import RigthBuble from "../../assets/images/desing/rigthBubules.png";
 import Bubble from '../../assets/images/bubbles/One1.png';
+import BG from '../../assets/images/vision/bg.png';
 const Vision = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -107,9 +108,11 @@ const Vision = () => {
                   x: 0,
                   transition: { duration: 0.6, delay: 0.6 }
                 } : {}}
-              />
+              >
+              <img src={BG} alt="" />
+              </motion.div>
             </div>
-            <div className="right">
+            {/* <div className="right">
             <motion.div 
                 className="graph-one"
                 initial={{ opacity: 0, x: 20 }}
@@ -119,7 +122,7 @@ const Vision = () => {
                   transition: { duration: 0.6, delay: 0.8 }
                 } : {}}
               />
-            </div>
+            </div> */}
           </div>
           <motion.div className="content"
             initial={{ opacity: 0 }}
@@ -273,7 +276,7 @@ const Vision = () => {
             } : {}}
           >
           <img src={VisionPoints} alt="" />
-          <p>Staff can use either Computer, PAD (or) Mobile</p>
+          <p>Staff can use either Computer, Mobile</p>
         </motion.div>
         <motion.div className="items"
             initial={{ opacity: 0, y: 10 }}
@@ -287,7 +290,7 @@ const Vision = () => {
             } : {}}
           >
           <img src={VisionPoints} alt="" />
-          <p>Customers use Fabklean app to raise requests</p>
+          <p>Customers use mobile app to raise requests</p>
         </motion.div>
         <motion.div className="items"
             initial={{ opacity: 0, y: 10 }}
@@ -315,7 +318,7 @@ const Vision = () => {
             } : {}}
           >
           <img src={VisionPoints} alt="" />
-          <p>Owners can use Fabklean Business app</p>
+          <p>Owners can use Dashboard Business app</p>
         </motion.div>
       </motion.div>
     </div>

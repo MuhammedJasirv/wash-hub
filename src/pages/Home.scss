@@ -1,25 +1,74 @@
+.home-header {
+  .home-hero {
+    background-image: url('../assets/images/desing/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0 1rem;
+    height: auto;
 
-.home-hero {
-  background-image: url('../assets/images/desing/bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding: 0 1rem;
+    // Mobile first
+    min-height: 70vh;
 
-  @media (min-width: 576px) {
-    padding: 0 1.5rem;
+    // Small phones
+    @media (max-width: 480px) {
+      background-position: top;
+      min-height: 80vh;
+       background-image: none; 
+       padding: 0;
+    }
+
+    // Tablets
+    @media (min-width: 576px) {
+      padding: 0 1.5rem;
+      background-position: center top;
+      min-height: 90vh;
+    }
+
+    // Small laptops
+    @media (max-width: 768px) {
+      // padding: 0 2rem;
+      background-position: center;
+      min-height: 100vh;
+      background-image: none; 
+       padding: 0;
+    }
+
+    // Desktops
+    @media (min-width: 992px) {
+      padding: 0 3rem;
+      background-position: center center;
+      min-height: 100vh;
+    }
+
+    // Large screens
+    @media (min-width: 1200px) {
+      padding: 0 5rem;
+      background-position: bottom;
+      height: auto;
+      min-height: unset;
+    }
   }
 
-  @media (min-width: 768px) {
-    padding: 0 2rem;
+  /* Hide on mobile */
+  .featureshide,
+  .abouthide {
+    display: none;
   }
 
+  /* Show on desktop */
   @media (min-width: 992px) {
-    padding: 0 3rem;
+    .featureshide,
+    .abouthide {
+      display: block;
+    }
+    .home-hero-mobile {
+      display: none;
+    }
   }
 
-  @media (min-width: 1200px) {
-    padding: 0 5rem;
+  /* Show on mobile only */
+  .home-hero-mobile {
+    display: block;
   }
 }
-

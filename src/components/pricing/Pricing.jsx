@@ -28,6 +28,12 @@ const Pricing = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isOn, setIsOn] = useState(true);
+  const handleWhatsAppClick = () => {
+    const message = encodeURIComponent(
+      "Hello LaundryAce Team 👋, I’m interested in your laundry management software. Could you please share more details?"
+    );
+    window.open(`https://wa.me/7012212199?text=${message}`, "_blank");
+  };
   return (
     <motion.div
       className="pricing"
@@ -61,7 +67,7 @@ const Pricing = () => {
       </motion.div>
 
       {/* Toggle Switch */}
-      <motion.div
+      {/* <motion.div
         className="pricing-toggle-container"
         initial={{ opacity: 0 }}
         animate={
@@ -71,18 +77,19 @@ const Pricing = () => {
                 transition: { duration: 0.6, delay: 0.4 },
               }
             : {}
-        }
-      >
-        <p>Yearly Pricing</p>
+        }>
+        <p className={isOn ? "inactive-text" : "active-text"}>Yearly Pricing</p>
         <div>
           <ToggleSwitch isOn={isOn} setIsOn={setIsOn} />
         </div>
-        <span>Monthly Pricing</span>
-      </motion.div>
+        <span className={isOn ? "active-text" : "inactive-text"}>
+          Monthly Pricing
+        </span>
+      </motion.div> */}
 
       {/* Price Details */}
-      <AnimatePresence mode="wait">
-        {isOn ? (
+      {/* <AnimatePresence mode="wait">
+        {!isOn ? (
           <motion.div
             key="yearly"
             className="price-details"
@@ -120,7 +127,7 @@ const Pricing = () => {
               <span>₹</span>9999
             </motion.p>
 
-            {/* Month */}
+
             <motion.p
               className="month"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -136,7 +143,7 @@ const Pricing = () => {
               /Year
             </motion.p>
 
-            {/* Description */}
+            Description 
             <motion.p
               className="description"
               initial={{ opacity: 0 }}
@@ -262,7 +269,7 @@ const Pricing = () => {
               <span>₹</span>999
             </motion.p>
 
-            {/* Month */}
+            Month 
             <motion.p
               className="month"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -278,7 +285,7 @@ const Pricing = () => {
               /Month
             </motion.p>
 
-            {/* Description */}
+             Description 
             <motion.p
               className="description"
               initial={{ opacity: 0 }}
@@ -367,7 +374,18 @@ const Pricing = () => {
             <button className="choose-plan-button">Choose Plan</button>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
+
+      {/* WhatsAppButton */}
+
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="cta-button"
+        onClick={handleWhatsAppClick}
+      >
+        Contact Now
+      </motion.button>
       {/* Pricing Footer */}
       <motion.div
         className="pricing-footer"

@@ -1,0 +1,57 @@
+.whatsapp-chat-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    height: 70px;    // Increased size
+    width: 70px;     // Increased size
+    display: grid;
+    place-items: center;
+    z-index: 999;
+    border-radius: 50%;
+    background: #25D366;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+
+    &:hover {
+        transform: scale(1.08);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+
+    &.animate {
+        animation: whatsapp-jump 0.7s ease-in-out 1;
+    }
+}
+
+.whatsapp-chat-icon {
+    height: 60px;      // Increased size
+    width: 60px;       // Increased size
+    background: #25D366;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 2.6rem; // Increased icon size
+}
+
+@keyframes whatsapp-jump {
+    0% { transform: scale(1) translateY(0); }
+    30% { transform: scale(1.15) translateY(-10px); }
+    60% { transform: scale(0.95) translateY(4px); }
+    100% { transform: scale(1) translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .whatsapp-chat-btn {
+        bottom: 1rem;
+        right: 0.5rem;
+        height: 56px;
+        width: 56px;
+    }
+    .whatsapp-chat-icon {
+        height: 48px;
+        width: 48px;
+        font-size: 2rem;
+    }
+}
