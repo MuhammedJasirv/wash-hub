@@ -29,7 +29,7 @@ const Content = () => {
       <h3 className="subheading">
         Book a Free Demo:{" "}
         <a href="tel:+917012212199" className="phone-number">
-          +91 7012212199
+          +91 70 122 121 99
         </a>
       </h3>
 

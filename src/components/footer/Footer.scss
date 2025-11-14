@@ -63,6 +63,7 @@
         font-size: 15px;
         opacity: 0.9;
         line-height: 1.7;
+        text-align: start;
       }
     }
 
@@ -181,7 +182,36 @@
         font-size: 18px;
         margin-bottom: 0.5rem;
       }
+      .store-wrapper {
+  position: relative;
+  width: fit-content;
+}
 
+.store-image {
+  display: block;
+  width: 200px; // change size as needed
+  height: auto;
+}
+
+/* Transparent clickable areas */
+.click-zone {
+  position: absolute;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+/* TOP HALF (App Store) */
+.top-zone {
+  top: 0;
+  height: 50%;
+}
+
+/* BOTTOM HALF (Play Store) */
+.bottom-zone {
+  bottom: 0;
+  height: 50%;
+}
       img {
         width: 150px;
         cursor: pointer;
@@ -250,6 +280,9 @@
 
     .footer-section {
       padding: 2rem;
+      .footer-about{
+        text-align: center;
+      }
     }
   }
 

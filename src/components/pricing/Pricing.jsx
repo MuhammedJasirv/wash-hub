@@ -413,18 +413,30 @@ const Pricing = () => {
                 : {}
             }
           >
-            <motion.img
+            {/* <motion.img
               src={PlayStore}
               alt=""
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-            />
-            <motion.img
-              src={AppStore}
-              alt=""
+            /> */}
+            <motion.a
+              href=" https://play.google.com/store/apps/details?id=com.laundryace.customer"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-            />
+            >
+              <img src={PlayStore} alt="play store" />
+            </motion.a>
+            <motion.a
+              href="https://apps.apple.com/gh/app/laundry-ace/id6745163249"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <img src={AppStore} alt="App Store" />
+            </motion.a>
           </motion.div>
         </div>
         <div className="rigth">

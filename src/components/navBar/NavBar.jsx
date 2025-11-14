@@ -138,7 +138,7 @@ const NavBar = ({ isOpen, setIsOpen, setWidthScreen, widthScreen }) => {
                 </motion.li>
               ))}
             </motion.ul>
-            <motion.div
+            {/* <motion.div
               className="social-mediaa"
               ref={ref}
               variants={{
@@ -167,7 +167,7 @@ const NavBar = ({ isOpen, setIsOpen, setWidthScreen, widthScreen }) => {
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 />
               ))}
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         )}
       </AnimatePresence>

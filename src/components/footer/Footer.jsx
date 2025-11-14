@@ -10,12 +10,14 @@ import "./Footer.scss";
 const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
- const handleWhatsAppClick = () => {
+
+  const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
       "Hello LaundryAce Team 👋, I’m interested in your laundry management software. Could you please share more details?"
     );
     window.open(`https://wa.me/7012212199?text=${message}`, "_blank");
   };
+
   return (
     <motion.footer
       className="footer"
@@ -31,7 +33,7 @@ const Footer = () => {
           : {}
       }
     >
-      {/* Sections */}
+      {/* Main Sections */}
       <motion.div
         className="sections"
         initial="hidden"
@@ -44,7 +46,7 @@ const Footer = () => {
           },
         }}
       >
-        {/* 1️⃣ Company Info */}
+        {/* Company Info */}
         <motion.div
           className="first-section"
           variants={{
@@ -54,31 +56,37 @@ const Footer = () => {
         >
           <div className="logo-section">
             <img src={Logo} alt="LaundryAce Logo" />
-            <p>LaundryAce </p>
+            <p>LaundryAce</p>
           </div>
-          <div className="footer-about">
-            Have questions or want to see a live demo? 
-Our product experts are happy to walk you through LaundryAce and help you choose the right plan.
-          </div>
-        
+
+          <p className="footer-about">
+            Have questions or want to see a live demo? Our product experts will
+            walk you through LaundryAce and help you choose the right plan.
+          </p>
         </motion.div>
 
-        {/* 2️⃣ Contact */}
+        {/* Contact Section */}
         <motion.div
           className="secount-section"
           variants={{
             hidden: { opacity: 0, x: -20 },
             visible: { opacity: 1, x: 0 },
           }}
-        >  <div className="contact-info">
+        >
+          <div className="contact-info">
             <p className="heading">CALL US</p>
-            <a href="tel:+917012212199" className="value">+91 7012212199</a>
+            <a href="tel:+917012212199" className="value">
+              +91 70 122 121 99
+            </a>
           </div>
+
           <p className="heading">MAIL US</p>
-          <a href="mailto:info@ivorytechnologies.com" className="value">info@ivorytechnologies.com</a>
+          <a href="mailto:info@ivorytechnologies.com" className="value">
+            info@ivorytechnologies.com
+          </a>
         </motion.div>
 
-        {/* 3️⃣ Navigation */}
+        {/* Navigation */}
         <motion.div
           className="thrird-section"
           variants={{
@@ -92,7 +100,7 @@ Our product experts are happy to walk you through LaundryAce and help you choose
           <p>Terms & Conditions</p>
         </motion.div>
 
-        {/* 4️⃣ App Download */}
+        {/* App Download */}
         <motion.div
           className="last-section"
           variants={{
@@ -101,19 +109,40 @@ Our product experts are happy to walk you through LaundryAce and help you choose
           }}
         >
           <p className="demo" onClick={handleWhatsAppClick}>
-            Request for Demo <span>+91 7012212199</span>
+            Request for Demo <span>+91 70 122 121 99</span>
           </p>
+
           <p className="download">Download Our App</p>
-          <motion.img
-            src={Store}
-            alt="Store Button"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          />
+
+          <div className="store-wrapper">
+            <motion.img
+              src={Store}
+              alt="Store Button"
+              className="store-image"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            />
+
+            {/* Top Half Click (App Store) */}
+            <a
+              href="https://apps.apple.com/gh/app/laundry-ace/id6745163249"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="click-zone top-zone"
+            />
+
+            {/* Bottom Half Click (Play Store) */}
+            <a
+              href="https://play.google.com/store/apps/details?id=com.laundryace.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="click-zone bottom-zone"
+            />
+          </div>
         </motion.div>
       </motion.div>
 
-      {/* Bottom Section */}
+      {/* Footer Bottom */}
       <motion.div
         className="footer-section"
         initial={{ opacity: 0 }}
@@ -126,20 +155,7 @@ Our product experts are happy to walk you through LaundryAce and help you choose
             : {}
         }
       >
-        <p>© {new Date().getFullYear()} Ivory LaundryAce. All Rights Reserved.</p>
-
-        {/* <div className="social-media">
-          <p>Follow Us</p>
-          {[Facebook, LinkedIn, Instagram].map((icon, i) => (
-            <motion.img
-              key={i}
-              src={icon}
-              alt={`social-${i}`}
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 400 }}
-            />
-          ))}
-        </div> */}
+        <p>© {new Date().getFullYear()} LaundryAce. All Rights Reserved.</p>
       </motion.div>
     </motion.footer>
   );
